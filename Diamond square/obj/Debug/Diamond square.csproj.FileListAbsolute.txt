@@ -1,0 +1,20 @@
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\bin\Debug\Diamond square.exe.config
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\bin\Debug\Diamond square.exe
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\bin\Debug\Diamond square.pdb
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond square.csprojAssemblyReference.cache
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond_square.Form.resources
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond_square.Properties.Resources.resources
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.GenerateResource.cache
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.CoreCompileInputs.cache
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond square.exe
+C:\Users\Alfa\source\repos\Diamond square\Diamond square\obj\Debug\Diamond square.pdb
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.exe.config
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.exe
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.pdb
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csprojAssemblyReference.cache
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.Form.resources
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.Properties.Resources.resources
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.GenerateResource.cache
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.CoreCompileInputs.cache
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.exe
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.pdb
