@@ -6,125 +6,176 @@ namespace Diamond_square
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        int LengthArr, NumberSquares;
+        const int IMAGE_SIZE = 512;
+        
+        int numberSquares;
 
-        Bitmap Bmp;
+        Bitmap bmp;
 
-        int[,] ArrOfHeights;
+        int[,] arrOfHeights;
 
-        Color[] ArrOfColors;
+        Color[] arrOfColors;
 
-        Random Rnd;
+        Random rnd;
 
-        float R;
+        float roughnessFactor;
 
         public Form()
         {
             InitializeComponent();
+
             Initialize();
+
             ClearPicture();
         }
 
         private void Initialize()
         {
-            LengthArr = 513;
-            Bmp = new Bitmap(LengthArr, LengthArr);
-            ArrOfHeights = new int[LengthArr, LengthArr];
-            ArrOfColors = new Color[4451];
-            Rnd = new Random();
-            NumberSquares = 1;
-            R = (float)(Rbar.Value * 0.01);
+            bmp = new Bitmap(IMAGE_SIZE + 1, IMAGE_SIZE + 1);
+
+            arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
+
+            arrOfColors = new Color[4451];
+
+            rnd = new Random();
+
+            numberSquares = 1;
+
+            roughnessFactor = (float)(rBar.Value * 0.01);
+
+            Cycle(0, 1400, 0, 0, 70);
+
+            Cycle(1400, 1550, 25, 25, 112);
+
+            Cycle(1550, 1700, 35, 35, 150);
+
+            Cycle(1700, 1850, 50, 50, 200);
+
+            Cycle(1850, 2000, 75, 75, 237);
+
+            Cycle(2000, 2100, 0, 180, 0);
+
+            Cycle(2100, 2200, 0, 160, 0);
+
+            Cycle(2200, 2300, 0, 140, 0);
+
+            Cycle(2300, 2400, 0, 120, 0);
+
+            Cycle(2400, 2500, 0, 100, 0);
+
+            Cycle(2500, 2600, 225, 170, 42);
+
+            Cycle(2600, 2750, 195, 140, 34);
+
+            Cycle(2750, 2900, 165, 110, 26);
+
+            Cycle(2900, 3050, 135, 80, 18);
+
+            Cycle(3050, 4450, 105, 50, 10);
         }
 
         private void ClearPicture()
         {
-            Graphics.FromImage(Bmp).Clear(Color.White);
-            Picture.Image = Bmp;
+            Graphics.FromImage(bmp).Clear(Color.White);
+
+            picture.Image = bmp;
         }
 
-        private int Rand()
-        {
-            return Rnd.Next(-1, 1) == 0 ? 1 : -1;
-        }
+        private int Rand() => rnd.Next(-1, 1) == 0 ? 1 : -1;
 
         private void Start_Click(object sender, EventArgs e)
         {
-            if (NumberSquares == 1)
+            if (numberSquares == 1)
             {
-                ArrOfHeights[0, 0] = P1bar.Value;
-                ArrOfHeights[LengthArr - 1, 0] = P2bar.Value;
-                ArrOfHeights[LengthArr - 1, LengthArr - 1] = P3bar.Value;
-                ArrOfHeights[0, LengthArr - 1] = P4bar.Value;
+                arrOfHeights[0, 0] = p1bar.Value;
 
-                Cycle(0, 1400, 0, 0, 70);
-                Cycle(1400, 1550, 25, 25, 112);
-                Cycle(1550, 1700, 35, 35, 150);
-                Cycle(1700, 1850, 50, 50, 200);
-                Cycle(1850, 2000, 75, 75, 237);
-                Cycle(2000, 2100, 0, 180, 0);
-                Cycle(2100, 2200, 0, 160, 0);
-                Cycle(2200, 2300, 0, 140, 0);
-                Cycle(2300, 2400, 0, 120, 0);
-                Cycle(2400, 2500, 0, 100, 0);
-                Cycle(2500, 2600, 225, 170, 42);
-                Cycle(2600, 2750, 195, 140, 34);
-                Cycle(2750, 2900, 165, 110, 26);
-                Cycle(2900, 3050, 135, 80, 18);
-                Cycle(3050, 4450, 105, 50, 10);
+                arrOfHeights[IMAGE_SIZE, 0] = p2bar.Value;
 
-                Draw(0, LengthArr - 1); Draw(LengthArr - 1, 0);
-                Draw(LengthArr - 1, LengthArr - 1); Draw(0, 0);
+                arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3bar.Value;
+
+                arrOfHeights[0, IMAGE_SIZE] = p4bar.Value;
+
+                Draw(new Point(0, IMAGE_SIZE)); Draw(new Point(IMAGE_SIZE, 0));
+
+                Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); Draw(new Point(0, 0));
             }
 
-            else if (NumberSquares == 65536)
-                Start.Enabled = false;
+            else if (numberSquares == 65536)
+                start.Enabled = false;
 
-            int Step = 512 / (int)Math.Sqrt(NumberSquares);
+            int step = IMAGE_SIZE / (int)Math.Sqrt(numberSquares);
 
-            for (int i = 0; i < 512; i += Step)
+            for (int i = 0; i < IMAGE_SIZE; i += step)
             {
-                for (int j = 0; j < 512; j += Step)
-                    Diamond(j, i, Step + j, i, Step + j, Step + i, j, Step + i);
+                for (int j = 0; j < IMAGE_SIZE; j += step)
+                {
+                    Point p1 = new Point(j, i);
+
+                    Point p2 = new Point(step + j, i);
+
+                    Point p3 = new Point(step + j, step + i);
+
+                    Point p4 = new Point(j, step + i);
+
+                    Point p = Diamond(p1, p2, p3, p4, step);
+
+                    int h = arrOfHeights[p.X, p.Y];
+
+                    int h1 = arrOfHeights[p1.X, p1.Y];
+
+                    int h2 = arrOfHeights[p2.X, p2.Y];
+
+                    int h3 = arrOfHeights[p3.X, p3.Y];
+
+                    int h4 = arrOfHeights[p4.X, p4.Y];
+
+                    Draw(p);
+
+                    Draw(Square(new Point(p1.X, p.Y), h1, h4, h, step));
+
+                    Draw(Square(new Point(p2.X, p.Y), h2, h3, h, step));
+
+                    Draw(Square(new Point(p.X, p1.Y), h1, h2, h, step));
+
+                    Draw(Square(new Point(p.X, p4.Y), h3, h4, h, step));
+                }
             }
 
-            NumberSquares *= 4;
-            LabelNumSq.Text = "Кол-во квадратов: " + NumberSquares.ToString();
+            numberSquares *= 4;
+
+            labelNumSq.Text = "Кол-во квадратов: " + numberSquares.ToString();
         }
 
-        private void Draw(int x, int y)
+        private void Draw(Point p)
         {
-            Color color = ArrOfColors[ArrOfHeights[x, y] + 2000];
+            Color color = arrOfColors[arrOfHeights[p.X, p.Y] + 2000];
 
-            Bmp.SetPixel(x, y, color);
-            Picture.Image = Bmp;
+            bmp.SetPixel(p.X, p.Y, color);
+
+            picture.Image = bmp;
         }
 
         private void Cycle(int ind1, int ind2, int R, int G, int B)
         {
             for (int i = ind1; i < ind2; ++i)
-                ArrOfColors[i] = Color.FromArgb(R, G, B);
+                arrOfColors[i] = Color.FromArgb(R, G, B);
         }
 
-        private void Diamond(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)
+        private Point Diamond(Point p1, Point p2, Point p3, Point p4, int lenght)
         {
-            int L = x2 - x1;
-            int x = x1 + (L / 2);
-            int y = y1 + (L / 2);
+            Point p = new Point(p1.X + lenght / 2, p1.Y + lenght / 2);
 
-            ArrOfHeights[x, y] = Convert.ToInt32((ArrOfHeights[x1, y1] + ArrOfHeights[x2, y2]
-                + ArrOfHeights[x3, y3] + ArrOfHeights[x4, y4]) / 4 + R * L * Rand());
-            Draw(x, y);
+            arrOfHeights[p.X, p.Y] = Convert.ToInt32((arrOfHeights[p1.X, p1.Y] + arrOfHeights[p2.X, p2.Y]
+                + arrOfHeights[p3.X, p3.Y] + arrOfHeights[p4.X, p4.Y]) / 4 + roughnessFactor * lenght * Rand());
 
-            BuildHeight(x1, y, ArrOfHeights[x1, y1], ArrOfHeights[x4, y4], ArrOfHeights[x, y], L);
-            BuildHeight(x2, y, ArrOfHeights[x2, y2], ArrOfHeights[x3, y3], ArrOfHeights[x, y], L);
-            BuildHeight(x, y1, ArrOfHeights[x1, y1], ArrOfHeights[x2, y2], ArrOfHeights[x, y], L);
-            BuildHeight(x, y4, ArrOfHeights[x3, y3], ArrOfHeights[x4, y4], ArrOfHeights[x, y], L);
+            return p;
         }
 
-        private void BuildHeight(int x, int y, int h1, int h2, int h3, int L)
+        private Point Square(Point p, int h1, int h2, int h3, int lenght)
         {
-            ArrOfHeights[x, y] = Convert.ToInt32((h1 + h2 + h3) / 3 + R * L * Rand());
-            Draw(x, y);
+            arrOfHeights[p.X, p.Y] = Convert.ToInt32((h1 + h2 + h3) / 3 + roughnessFactor * lenght * Rand());
+
+            return p;
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -132,9 +183,13 @@ namespace Diamond_square
             var sfd = new SaveFileDialog
             {
                 Title = "Сохранить картинку как...",
+
                 OverwritePrompt = true,
+
                 CheckPathExists = true,
+
                 ShowHelp = true,
+
                 Filter = "JPG (*.JPG)|*.JPG|BMP (*.BMP)|*.BMP|PNG (*.PNG)|*.PNG|GIF (*.GIF)|*.GIF"
             };
 
@@ -142,8 +197,9 @@ namespace Diamond_square
             {
                 try
                 {
-                    Picture.Image.Save(sfd.FileName);
+                    picture.Image.Save(sfd.FileName);
                 }
+
                 catch
                 {
                     MessageBox.Show("Невозможно сохранить изображение.", "Ошибка",
@@ -154,25 +210,31 @@ namespace Diamond_square
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            LabelNumSq.Text = "Кол-во квадратов: 1";
-            Start.Enabled = true;
+            labelNumSq.Text = "Кол-во квадратов: 1";
+
+            start.Enabled = true;
 
             Initialize();
+
             ClearPicture();
         }
 
         private void Rbar_Scroll(object sender, EventArgs e)
         {
-            R = (float)(Rbar.Value * 0.01);
-            LabelR.Text = "R = " + R.ToString();
+            roughnessFactor = (float)(rBar.Value * 0.01);
+
+            labelR.Text = "R = " + roughnessFactor.ToString();
         }
 
         private void Scroller(object sender, EventArgs e)
         {
-            Label1.Text = P1bar.Value.ToString();
-            Label2.Text = P2bar.Value.ToString();
-            Label3.Text = P3bar.Value.ToString();
-            Label4.Text = P4bar.Value.ToString();
+            label1.Text = p1bar.Value.ToString();
+
+            label2.Text = p2bar.Value.ToString();
+
+            label3.Text = p3bar.Value.ToString();
+
+            label4.Text = p4bar.Value.ToString();
         }
 
         private void Exit_Click(object sender, EventArgs e) => Close();

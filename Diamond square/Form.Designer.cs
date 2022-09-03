@@ -28,342 +28,342 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Picture = new System.Windows.Forms.PictureBox();
-            this.Start = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
-            this.Clear = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.Button();
-            this.LabelNumSq = new System.Windows.Forms.Label();
-            this.Rbar = new System.Windows.Forms.TrackBar();
-            this.LabelR = new System.Windows.Forms.Label();
-            this.Label = new System.Windows.Forms.Label();
-            this.P1bar = new System.Windows.Forms.TrackBar();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.P2bar = new System.Windows.Forms.TrackBar();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.P3bar = new System.Windows.Forms.TrackBar();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.P4bar = new System.Windows.Forms.TrackBar();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.Label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Rbar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P1bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P2bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P3bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4bar)).BeginInit();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.start = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
+            this.labelNumSq = new System.Windows.Forms.Label();
+            this.rBar = new System.Windows.Forms.TrackBar();
+            this.labelR = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.p1bar = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.p2bar = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.p3bar = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.p4bar = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p3bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4bar)).BeginInit();
             this.SuspendLayout();
             // 
-            // Picture
+            // picture
             // 
-            this.Picture.Location = new System.Drawing.Point(12, 12);
-            this.Picture.Name = "Picture";
-            this.Picture.Size = new System.Drawing.Size(513, 513);
-            this.Picture.TabIndex = 0;
-            this.Picture.TabStop = false;
+            this.picture.Location = new System.Drawing.Point(12, 12);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(513, 513);
+            this.picture.TabIndex = 0;
+            this.picture.TabStop = false;
             // 
-            // Start
+            // start
             // 
-            this.Start.Location = new System.Drawing.Point(625, 12);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(75, 23);
-            this.Start.TabIndex = 1;
-            this.Start.Text = "Старт";
-            this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.Start_Click);
+            this.start.Location = new System.Drawing.Point(625, 12);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 1;
+            this.start.Text = "Старт";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // Save
+            // save
             // 
-            this.Save.Location = new System.Drawing.Point(625, 47);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 2;
-            this.Save.Text = "Сохранить";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
+            this.save.Location = new System.Drawing.Point(625, 47);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 2;
+            this.save.Text = "Сохранить";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // Clear
+            // clear
             // 
-            this.Clear.Location = new System.Drawing.Point(625, 82);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 3;
-            this.Clear.Text = "Очистка";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.clear.Location = new System.Drawing.Point(625, 82);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 3;
+            this.clear.Text = "Очистка";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.Clear_Click);
             // 
-            // Exit
+            // exit
             // 
-            this.Exit.Location = new System.Drawing.Point(625, 502);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(75, 23);
-            this.Exit.TabIndex = 4;
-            this.Exit.Text = "Выход";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.exit.Location = new System.Drawing.Point(625, 502);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(75, 23);
+            this.exit.TabIndex = 4;
+            this.exit.Text = "Выход";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // LabelNumSq
+            // labelNumSq
             // 
-            this.LabelNumSq.AutoSize = true;
-            this.LabelNumSq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelNumSq.Location = new System.Drawing.Point(536, 130);
-            this.LabelNumSq.Name = "LabelNumSq";
-            this.LabelNumSq.Size = new System.Drawing.Size(128, 13);
-            this.LabelNumSq.TabIndex = 5;
-            this.LabelNumSq.Text = "Кол-во квадратов: 1";
+            this.labelNumSq.AutoSize = true;
+            this.labelNumSq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNumSq.Location = new System.Drawing.Point(536, 130);
+            this.labelNumSq.Name = "labelNumSq";
+            this.labelNumSq.Size = new System.Drawing.Size(128, 13);
+            this.labelNumSq.TabIndex = 5;
+            this.labelNumSq.Text = "Кол-во квадратов: 1";
             // 
-            // Rbar
+            // rBar
             // 
-            this.Rbar.Location = new System.Drawing.Point(536, 198);
-            this.Rbar.Maximum = 100;
-            this.Rbar.Name = "Rbar";
-            this.Rbar.Size = new System.Drawing.Size(125, 45);
-            this.Rbar.TabIndex = 4;
-            this.Rbar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.Rbar.Value = 100;
-            this.Rbar.Scroll += new System.EventHandler(this.Rbar_Scroll);
+            this.rBar.Location = new System.Drawing.Point(536, 198);
+            this.rBar.Maximum = 100;
+            this.rBar.Name = "rBar";
+            this.rBar.Size = new System.Drawing.Size(125, 45);
+            this.rBar.TabIndex = 4;
+            this.rBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.rBar.Value = 100;
+            this.rBar.Scroll += new System.EventHandler(this.Rbar_Scroll);
             // 
-            // LabelR
+            // labelR
             // 
-            this.LabelR.AutoSize = true;
-            this.LabelR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelR.Location = new System.Drawing.Point(547, 221);
-            this.LabelR.Name = "LabelR";
-            this.LabelR.Size = new System.Drawing.Size(38, 13);
-            this.LabelR.TabIndex = 6;
-            this.LabelR.Text = "R = 1";
+            this.labelR.AutoSize = true;
+            this.labelR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelR.Location = new System.Drawing.Point(547, 221);
+            this.labelR.Name = "labelR";
+            this.labelR.Size = new System.Drawing.Size(38, 13);
+            this.labelR.TabIndex = 6;
+            this.labelR.Text = "R = 1";
             // 
-            // Label
+            // label
             // 
-            this.Label.AutoSize = true;
-            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label.Location = new System.Drawing.Point(536, 182);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(98, 13);
-            this.Label.TabIndex = 7;
-            this.Label.Text = "Шероховатость";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label.Location = new System.Drawing.Point(536, 182);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(98, 13);
+            this.label.TabIndex = 7;
+            this.label.Text = "Шероховатость";
             // 
-            // P1bar
+            // p1bar
             // 
-            this.P1bar.LargeChange = 10;
-            this.P1bar.Location = new System.Drawing.Point(538, 273);
-            this.P1bar.Maximum = 600;
-            this.P1bar.Minimum = -200;
-            this.P1bar.Name = "P1bar";
-            this.P1bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.P1bar.Size = new System.Drawing.Size(45, 147);
-            this.P1bar.TabIndex = 8;
-            this.P1bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.P1bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p1bar.LargeChange = 10;
+            this.p1bar.Location = new System.Drawing.Point(538, 273);
+            this.p1bar.Maximum = 600;
+            this.p1bar.Minimum = -200;
+            this.p1bar.Name = "p1bar";
+            this.p1bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p1bar.Size = new System.Drawing.Size(45, 147);
+            this.p1bar.TabIndex = 8;
+            this.p1bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p1bar.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // Label1
+            // label1
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label1.Location = new System.Drawing.Point(533, 418);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(14, 13);
-            this.Label1.TabIndex = 9;
-            this.Label1.Text = "0";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(533, 418);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "0";
             // 
-            // Label2
+            // label2
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label2.Location = new System.Drawing.Point(572, 418);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(14, 13);
-            this.Label2.TabIndex = 11;
-            this.Label2.Text = "0";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(572, 418);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "0";
             // 
-            // P2bar
+            // p2bar
             // 
-            this.P2bar.LargeChange = 10;
-            this.P2bar.Location = new System.Drawing.Point(577, 273);
-            this.P2bar.Maximum = 600;
-            this.P2bar.Minimum = -200;
-            this.P2bar.Name = "P2bar";
-            this.P2bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.P2bar.Size = new System.Drawing.Size(45, 147);
-            this.P2bar.TabIndex = 10;
-            this.P2bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.P2bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p2bar.LargeChange = 10;
+            this.p2bar.Location = new System.Drawing.Point(577, 273);
+            this.p2bar.Maximum = 600;
+            this.p2bar.Minimum = -200;
+            this.p2bar.Name = "p2bar";
+            this.p2bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p2bar.Size = new System.Drawing.Size(45, 147);
+            this.p2bar.TabIndex = 10;
+            this.p2bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p2bar.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // Label3
+            // label3
             // 
-            this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label3.Location = new System.Drawing.Point(611, 418);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(14, 13);
-            this.Label3.TabIndex = 13;
-            this.Label3.Text = "0";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(611, 418);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "0";
             // 
-            // P3bar
+            // p3bar
             // 
-            this.P3bar.LargeChange = 10;
-            this.P3bar.Location = new System.Drawing.Point(616, 273);
-            this.P3bar.Maximum = 600;
-            this.P3bar.Minimum = -200;
-            this.P3bar.Name = "P3bar";
-            this.P3bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.P3bar.Size = new System.Drawing.Size(45, 147);
-            this.P3bar.TabIndex = 12;
-            this.P3bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.P3bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p3bar.LargeChange = 10;
+            this.p3bar.Location = new System.Drawing.Point(616, 273);
+            this.p3bar.Maximum = 600;
+            this.p3bar.Minimum = -200;
+            this.p3bar.Name = "p3bar";
+            this.p3bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p3bar.Size = new System.Drawing.Size(45, 147);
+            this.p3bar.TabIndex = 12;
+            this.p3bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p3bar.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // Label4
+            // label4
             // 
-            this.Label4.AutoSize = true;
-            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label4.Location = new System.Drawing.Point(650, 418);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(14, 13);
-            this.Label4.TabIndex = 15;
-            this.Label4.Text = "0";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(650, 418);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "0";
             // 
-            // P4bar
+            // p4bar
             // 
-            this.P4bar.LargeChange = 10;
-            this.P4bar.Location = new System.Drawing.Point(655, 273);
-            this.P4bar.Maximum = 600;
-            this.P4bar.Minimum = -200;
-            this.P4bar.Name = "P4bar";
-            this.P4bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.P4bar.Size = new System.Drawing.Size(45, 147);
-            this.P4bar.TabIndex = 14;
-            this.P4bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.P4bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p4bar.LargeChange = 10;
+            this.p4bar.Location = new System.Drawing.Point(655, 273);
+            this.p4bar.Maximum = 600;
+            this.p4bar.Minimum = -200;
+            this.p4bar.Name = "p4bar";
+            this.p4bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p4bar.Size = new System.Drawing.Size(45, 147);
+            this.p4bar.TabIndex = 14;
+            this.p4bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p4bar.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // Label6
+            // label6
             // 
-            this.Label6.AutoSize = true;
-            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label6.Location = new System.Drawing.Point(525, 0);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(11, 12);
-            this.Label6.TabIndex = 17;
-            this.Label6.Text = "2";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(525, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 12);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "2";
             // 
-            // Label7
+            // label7
             // 
-            this.Label7.AutoSize = true;
-            this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label7.Location = new System.Drawing.Point(525, 525);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(11, 12);
-            this.Label7.TabIndex = 18;
-            this.Label7.Text = "3";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(525, 525);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 12);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "3";
             // 
-            // Label8
+            // label8
             // 
-            this.Label8.AutoSize = true;
-            this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label8.Location = new System.Drawing.Point(0, 525);
-            this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(11, 12);
-            this.Label8.TabIndex = 19;
-            this.Label8.Text = "4";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(0, 525);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 12);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "4";
             // 
-            // Label5
+            // label5
             // 
-            this.Label5.AutoSize = true;
-            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label5.Location = new System.Drawing.Point(0, 0);
-            this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(11, 12);
-            this.Label5.TabIndex = 20;
-            this.Label5.Text = "1";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 12);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "1";
             // 
-            // Label9
+            // label9
             // 
-            this.Label9.AutoSize = true;
-            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label9.Location = new System.Drawing.Point(543, 264);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(11, 12);
-            this.Label9.TabIndex = 21;
-            this.Label9.Text = "1";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(543, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 12);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "1";
             // 
-            // Label10
+            // label10
             // 
-            this.Label10.AutoSize = true;
-            this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label10.Location = new System.Drawing.Point(582, 264);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(11, 12);
-            this.Label10.TabIndex = 22;
-            this.Label10.Text = "2";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(582, 264);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 12);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "2";
             // 
-            // Label11
+            // label11
             // 
-            this.Label11.AutoSize = true;
-            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label11.Location = new System.Drawing.Point(621, 264);
-            this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(11, 12);
-            this.Label11.TabIndex = 23;
-            this.Label11.Text = "3";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(621, 264);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 12);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "3";
             // 
-            // Label12
+            // label12
             // 
-            this.Label12.AutoSize = true;
-            this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label12.Location = new System.Drawing.Point(660, 264);
-            this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(11, 12);
-            this.Label12.TabIndex = 24;
-            this.Label12.Text = "4";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(660, 264);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(11, 12);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "4";
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 537);
-            this.Controls.Add(this.Label12);
-            this.Controls.Add(this.Label11);
-            this.Controls.Add(this.Label10);
-            this.Controls.Add(this.Label9);
-            this.Controls.Add(this.Label5);
-            this.Controls.Add(this.Label8);
-            this.Controls.Add(this.Label7);
-            this.Controls.Add(this.Label6);
-            this.Controls.Add(this.Label4);
-            this.Controls.Add(this.P4bar);
-            this.Controls.Add(this.Label3);
-            this.Controls.Add(this.P3bar);
-            this.Controls.Add(this.Label2);
-            this.Controls.Add(this.P2bar);
-            this.Controls.Add(this.Label1);
-            this.Controls.Add(this.P1bar);
-            this.Controls.Add(this.Label);
-            this.Controls.Add(this.LabelR);
-            this.Controls.Add(this.Rbar);
-            this.Controls.Add(this.LabelNumSq);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Clear);
-            this.Controls.Add(this.Save);
-            this.Controls.Add(this.Start);
-            this.Controls.Add(this.Picture);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.p4bar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.p3bar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.p2bar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.p1bar);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.labelR);
+            this.Controls.Add(this.rBar);
+            this.Controls.Add(this.labelNumSq);
+            this.Controls.Add(this.exit);
+            this.Controls.Add(this.clear);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.start);
+            this.Controls.Add(this.picture);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(728, 576);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(728, 576);
             this.Name = "Form";
             this.Text = "Diamond square";
-            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Rbar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P1bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P2bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P3bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p3bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,31 +371,31 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox Picture;
-        private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Label LabelNumSq;
-        private System.Windows.Forms.TrackBar Rbar;
-        private System.Windows.Forms.Label LabelR;
-        private System.Windows.Forms.Label Label;
-        private System.Windows.Forms.TrackBar P1bar;
-        private System.Windows.Forms.Label Label1;
-        private System.Windows.Forms.Label Label2;
-        private System.Windows.Forms.TrackBar P2bar;
-        private System.Windows.Forms.Label Label3;
-        private System.Windows.Forms.TrackBar P3bar;
-        private System.Windows.Forms.Label Label4;
-        private System.Windows.Forms.TrackBar P4bar;
-        private System.Windows.Forms.Label Label6;
-        private System.Windows.Forms.Label Label7;
-        private System.Windows.Forms.Label Label8;
-        private System.Windows.Forms.Label Label5;
-        private System.Windows.Forms.Label Label9;
-        private System.Windows.Forms.Label Label10;
-        private System.Windows.Forms.Label Label11;
-        private System.Windows.Forms.Label Label12;
+        private System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.Button start;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Label labelNumSq;
+        private System.Windows.Forms.TrackBar rBar;
+        private System.Windows.Forms.Label labelR;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TrackBar p1bar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar p2bar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TrackBar p3bar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar p4bar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }
 
