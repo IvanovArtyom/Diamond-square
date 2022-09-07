@@ -7,8 +7,6 @@ namespace Diamond_square
     public partial class Form : System.Windows.Forms.Form
     {
         const int IMAGE_SIZE = 512;
-        
-        int numberSquares;
 
         Bitmap bmp;
 
@@ -38,8 +36,6 @@ namespace Diamond_square
             arrOfColors = new Color[4451];
 
             rnd = new Random();
-
-            numberSquares = 1;
 
             roughnessFactor = (float)(rBar.Value * 0.01);
 
@@ -85,65 +81,62 @@ namespace Diamond_square
 
         private void Start_Click(object sender, EventArgs e)
         {
-            if (numberSquares == 1)
+            start.Enabled = false;
+
+            arrOfHeights[0, 0] = p1bar.Value;
+
+            arrOfHeights[IMAGE_SIZE, 0] = p2bar.Value;
+
+            arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3bar.Value;
+
+            arrOfHeights[0, IMAGE_SIZE] = p4bar.Value;
+
+            Draw(new Point(0, IMAGE_SIZE)); Draw(new Point(IMAGE_SIZE, 0));
+
+            Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); Draw(new Point(0, 0));
+
+            int step = IMAGE_SIZE;
+
+            while (step != 1)
             {
-                arrOfHeights[0, 0] = p1bar.Value;
-
-                arrOfHeights[IMAGE_SIZE, 0] = p2bar.Value;
-
-                arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3bar.Value;
-
-                arrOfHeights[0, IMAGE_SIZE] = p4bar.Value;
-
-                Draw(new Point(0, IMAGE_SIZE)); Draw(new Point(IMAGE_SIZE, 0));
-
-                Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); Draw(new Point(0, 0));
-            }
-
-            else if (numberSquares == 65536)
-                start.Enabled = false;
-
-            int step = IMAGE_SIZE / (int)Math.Sqrt(numberSquares);
-
-            for (int i = 0; i < IMAGE_SIZE; i += step)
-            {
-                for (int j = 0; j < IMAGE_SIZE; j += step)
+                for (int i = 0; i < IMAGE_SIZE; i += step)
                 {
-                    Point p1 = new Point(j, i);
+                    for (int j = 0; j < IMAGE_SIZE; j += step)
+                    {
+                        Point p1 = new Point(j, i);
 
-                    Point p2 = new Point(step + j, i);
+                        Point p2 = new Point(step + j, i);
 
-                    Point p3 = new Point(step + j, step + i);
+                        Point p3 = new Point(step + j, step + i);
 
-                    Point p4 = new Point(j, step + i);
+                        Point p4 = new Point(j, step + i);
 
-                    Point p = Diamond(p1, p2, p3, p4, step);
+                        Point p = Diamond(p1, p2, p3, p4, step);
 
-                    int h = arrOfHeights[p.X, p.Y];
+                        int h = arrOfHeights[p.X, p.Y];
 
-                    int h1 = arrOfHeights[p1.X, p1.Y];
+                        int h1 = arrOfHeights[p1.X, p1.Y];
 
-                    int h2 = arrOfHeights[p2.X, p2.Y];
+                        int h2 = arrOfHeights[p2.X, p2.Y];
 
-                    int h3 = arrOfHeights[p3.X, p3.Y];
+                        int h3 = arrOfHeights[p3.X, p3.Y];
 
-                    int h4 = arrOfHeights[p4.X, p4.Y];
+                        int h4 = arrOfHeights[p4.X, p4.Y];
 
-                    Draw(p);
+                        Draw(p);
 
-                    Draw(Square(new Point(p1.X, p.Y), h1, h4, h, step));
+                        Draw(Square(new Point(p1.X, p.Y), h1, h4, h, step));
 
-                    Draw(Square(new Point(p2.X, p.Y), h2, h3, h, step));
+                        Draw(Square(new Point(p2.X, p.Y), h2, h3, h, step));
 
-                    Draw(Square(new Point(p.X, p1.Y), h1, h2, h, step));
+                        Draw(Square(new Point(p.X, p1.Y), h1, h2, h, step));
 
-                    Draw(Square(new Point(p.X, p4.Y), h3, h4, h, step));
+                        Draw(Square(new Point(p.X, p4.Y), h3, h4, h, step));
+                    }
                 }
+
+                step /= 2;
             }
-
-            numberSquares *= 4;
-
-            labelNumSq.Text = "Кол-во квадратов: " + numberSquares.ToString();
         }
 
         private void Draw(Point p)
@@ -210,8 +203,6 @@ namespace Diamond_square
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            labelNumSq.Text = "Кол-во квадратов: 1";
-
             start.Enabled = true;
 
             Initialize();

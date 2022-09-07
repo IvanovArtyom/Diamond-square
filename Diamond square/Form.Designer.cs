@@ -33,7 +33,6 @@
             this.save = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
-            this.labelNumSq = new System.Windows.Forms.Label();
             this.rBar = new System.Windows.Forms.TrackBar();
             this.labelR = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
@@ -108,16 +107,6 @@
             this.exit.Text = "Выход";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // labelNumSq
-            // 
-            this.labelNumSq.AutoSize = true;
-            this.labelNumSq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumSq.Location = new System.Drawing.Point(536, 130);
-            this.labelNumSq.Name = "labelNumSq";
-            this.labelNumSq.Size = new System.Drawing.Size(128, 13);
-            this.labelNumSq.TabIndex = 5;
-            this.labelNumSq.Text = "Кол-во квадратов: 1";
             // 
             // rBar
             // 
@@ -346,7 +335,6 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.labelR);
             this.Controls.Add(this.rBar);
-            this.Controls.Add(this.labelNumSq);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.save);
@@ -376,7 +364,6 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Label labelNumSq;
         private System.Windows.Forms.TrackBar rBar;
         private System.Windows.Forms.Label labelR;
         private System.Windows.Forms.Label label;
