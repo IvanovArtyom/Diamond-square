@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Diamond_square
 {
@@ -74,7 +76,7 @@ namespace Diamond_square
         {
             Graphics.FromImage(bmp).Clear(Color.White);
 
-            picture.Image = bmp;
+            FillPicture();
         }
 
         private int Rand() => rnd.Next(-1, 1) == 0 ? 1 : -1;
@@ -95,6 +97,13 @@ namespace Diamond_square
 
             Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); Draw(new Point(0, 0));
 
+            Thread secondThread = new Thread(new ThreadStart(DiamondSquare));
+
+            secondThread.Start();
+        }
+
+        private void DiamondSquare()
+        {
             int step = IMAGE_SIZE;
 
             while (step != 1)
@@ -137,15 +146,16 @@ namespace Diamond_square
 
                 step /= 2;
             }
+
+            FillPicture();
         }
+
+        private async void FillPicture() => await Task.Run(() => picture.Image = bmp);
 
         private void Draw(Point p)
         {
             Color color = arrOfColors[arrOfHeights[p.X, p.Y] + 2000];
-
             bmp.SetPixel(p.X, p.Y, color);
-
-            picture.Image = bmp;
         }
 
         private void Cycle(int ind1, int ind2, int R, int G, int B)
