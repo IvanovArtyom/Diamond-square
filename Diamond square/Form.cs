@@ -10,6 +10,10 @@ namespace Diamond_square
     {
         const int IMAGE_SIZE = 512;
 
+        const int MAX_HEIGHT = 8848;
+
+        const int MIN_HEIGHT = -11034;
+
         Bitmap bmp;
 
         int[,] arrOfHeights;
@@ -35,41 +39,13 @@ namespace Diamond_square
 
             arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
 
-            arrOfColors = new Color[4451];
+            arrOfColors = new Color[MAX_HEIGHT - MIN_HEIGHT];
 
             rnd = new Random();
 
             roughnessFactor = (float)(rBar.Value * 0.01);
 
-            Cycle(0, 1400, 0, 0, 70);
-
-            Cycle(1400, 1550, 25, 25, 112);
-
-            Cycle(1550, 1700, 35, 35, 150);
-
-            Cycle(1700, 1850, 50, 50, 200);
-
-            Cycle(1850, 2000, 75, 75, 237);
-
-            Cycle(2000, 2100, 0, 180, 0);
-
-            Cycle(2100, 2200, 0, 160, 0);
-
-            Cycle(2200, 2300, 0, 140, 0);
-
-            Cycle(2300, 2400, 0, 120, 0);
-
-            Cycle(2400, 2500, 0, 100, 0);
-
-            Cycle(2500, 2600, 225, 170, 42);
-
-            Cycle(2600, 2750, 195, 140, 34);
-
-            Cycle(2750, 2900, 165, 110, 26);
-
-            Cycle(2900, 3050, 135, 80, 18);
-
-            Cycle(3050, 4450, 105, 50, 10);
+            FillColors();
         }
 
         private void ClearPicture()
@@ -93,9 +69,13 @@ namespace Diamond_square
 
             arrOfHeights[0, IMAGE_SIZE] = p4bar.Value;
 
-            Draw(new Point(0, IMAGE_SIZE)); Draw(new Point(IMAGE_SIZE, 0));
+            Draw(new Point(0, IMAGE_SIZE)); 
+            
+            Draw(new Point(IMAGE_SIZE, 0));
 
-            Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); Draw(new Point(0, 0));
+            Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); 
+            
+            Draw(new Point(0, 0));
 
             Thread secondThread = new Thread(new ThreadStart(DiamondSquare));
 
@@ -154,14 +134,41 @@ namespace Diamond_square
 
         private void Draw(Point p)
         {
-            Color color = arrOfColors[arrOfHeights[p.X, p.Y] + 2000];
+            int height = Math.Max(arrOfHeights[p.X, p.Y], MIN_HEIGHT);
+
+            height = Math.Min(height, MAX_HEIGHT);
+
+            Color color = arrOfColors[height + -MIN_HEIGHT];
+
             bmp.SetPixel(p.X, p.Y, color);
         }
 
-        private void Cycle(int ind1, int ind2, int R, int G, int B)
+        private void FillColors()
         {
-            for (int i = ind1; i < ind2; ++i)
-                arrOfColors[i] = Color.FromArgb(R, G, B);
+            const int MIN_MOUNTAIN_HEIGHT = 700;
+
+            double clrStep = 0.0057;
+
+            for (int i = 0; i < -MIN_HEIGHT; ++i)
+            {
+                int clrValue = (int)(i * clrStep);
+
+                arrOfColors[i] = Color.FromArgb(0 + clrValue, 0 + clrValue, 0 + clrValue * 4);
+            }
+
+            clrStep = -0.144;
+
+            for (int i = -MIN_HEIGHT; i < -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; ++i)
+                arrOfColors[i] = Color.FromArgb(0, 200 + (int)(clrStep * (i + MIN_HEIGHT)), 0);
+
+            clrStep = -0.0123;
+
+            for (int i = -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; i < -MIN_HEIGHT + MAX_HEIGHT; ++i)
+            {
+                int clrValue = (int)((i + MIN_HEIGHT - MIN_MOUNTAIN_HEIGHT) * clrStep);
+
+                arrOfColors[i] = Color.FromArgb(255 + clrValue * 2, 210 + clrValue * 2, 100 + clrValue);
+            }
         }
 
         private Point Diamond(Point p1, Point p2, Point p3, Point p4, int lenght)
