@@ -39,7 +39,7 @@ namespace Diamond_square
 
             arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
 
-            arrOfColors = new Color[MAX_HEIGHT - MIN_HEIGHT];
+            arrOfColors = new Color[MAX_HEIGHT - MIN_HEIGHT + 1];
 
             rnd = new Random();
 
@@ -163,7 +163,7 @@ namespace Diamond_square
 
             clrStep = -0.0123;
 
-            for (int i = -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; i < -MIN_HEIGHT + MAX_HEIGHT; ++i)
+            for (int i = -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; i < -MIN_HEIGHT + MAX_HEIGHT + 1; ++i)
             {
                 int clrValue = (int)((i + MIN_HEIGHT - MIN_MOUNTAIN_HEIGHT) * clrStep);
 
