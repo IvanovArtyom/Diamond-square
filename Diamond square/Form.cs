@@ -134,11 +134,7 @@ namespace Diamond_square
 
         private void Draw(Point p)
         {
-            int height = Math.Max(arrOfHeights[p.X, p.Y], MIN_HEIGHT);
-
-            height = Math.Min(height, MAX_HEIGHT);
-
-            Color color = arrOfColors[height + -MIN_HEIGHT];
+            Color color = arrOfColors[arrOfHeights[p.X, p.Y] + -MIN_HEIGHT];
 
             bmp.SetPixel(p.X, p.Y, color);
         }
@@ -178,6 +174,8 @@ namespace Diamond_square
             arrOfHeights[p.X, p.Y] = Convert.ToInt32((arrOfHeights[p1.X, p1.Y] + arrOfHeights[p2.X, p2.Y]
                 + arrOfHeights[p3.X, p3.Y] + arrOfHeights[p4.X, p4.Y]) / 4 + roughnessFactor * lenght * Rand());
 
+            CheckExtremeValues(p);
+
             return p;
         }
 
@@ -185,7 +183,16 @@ namespace Diamond_square
         {
             arrOfHeights[p.X, p.Y] = Convert.ToInt32((h1 + h2 + h3) / 3 + roughnessFactor * lenght * Rand());
 
+            CheckExtremeValues(p);
+
             return p;
+        }
+
+        private void CheckExtremeValues(Point p)
+        {
+            int height = Math.Max(arrOfHeights[p.X, p.Y], MIN_HEIGHT);
+
+            arrOfHeights[p.X, p.Y] = Math.Min(height, MAX_HEIGHT);
         }
 
         private void Save_Click(object sender, EventArgs e)
