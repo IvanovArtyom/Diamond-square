@@ -14,6 +14,12 @@ namespace Diamond_square
 
         const int MIN_HEIGHT = -11034;
 
+        const int MIN_MOUNTAIN_HEIGHT = 1000;
+
+        const int SNOW_LINE = 4675;
+
+        const int MIN_OCEAN_DEEP = -500;
+
         Bitmap bmp;
 
         int[,] arrOfHeights;
@@ -141,30 +147,61 @@ namespace Diamond_square
 
         private void FillColors()
         {
-            const int MIN_MOUNTAIN_HEIGHT = 700;
+            Color oceanStart = Color.FromArgb(0, 0, 0);
 
-            double clrStep = 0.0057;
+            Color oceanEnd = Color.FromArgb(0, 49, 102);
 
-            for (int i = 0; i < -MIN_HEIGHT; ++i)
-            {
-                int clrValue = (int)(i * clrStep);
+            Color seaStart = Color.FromArgb(0, 49, 102);
 
-                arrOfColors[i] = Color.FromArgb(0 + clrValue, 0 + clrValue, 0 + clrValue * 4);
+            Color seaEnd = Color.FromArgb(66, 170, 250);
+
+            Color landStart = Color.FromArgb(107, 219, 107);
+
+            Color landEnd = Color.FromArgb(14, 59, 14);
+
+            Color mountainStart = Color.FromArgb(255, 218, 158);
+
+            Color mountainEnd = Color.FromArgb(5, 3, 0);
+
+            Color snowStart = Color.FromArgb(5, 3, 0);
+
+            Color snowEnd = Color.FromArgb(255, 250, 250);
+
+            int i = 0;
+
+            FillBiome(ref i, -MIN_HEIGHT + MIN_OCEAN_DEEP, MIN_OCEAN_DEEP - MIN_HEIGHT, oceanStart, oceanEnd);
+
+            FillBiome(ref i, -MIN_HEIGHT, -MIN_OCEAN_DEEP, seaStart, seaEnd);
+
+            FillBiome(ref i, -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT, MIN_MOUNTAIN_HEIGHT, landStart, landEnd);
+
+            FillBiome(ref i, -MIN_HEIGHT + SNOW_LINE, SNOW_LINE - MIN_MOUNTAIN_HEIGHT, mountainStart, mountainEnd);
+
+            FillBiome(ref i, -MIN_HEIGHT + MAX_HEIGHT + 1, MAX_HEIGHT - SNOW_LINE, snowStart, snowEnd);
+        }
+
+        private void FillBiome(ref int i, int cycleEnd, int range, Color startColor, Color endColor)
+        {
+            double[] steps = DefineSteps(startColor, endColor, range);
+
+            for (int j = 0; i < cycleEnd; ++i, ++j)
+            {   
+                arrOfColors[i] = Color.FromArgb(startColor.R + (int)(j * steps[0]),
+                    startColor.G + (int)(j * steps[1]), startColor.B + (int)(j * steps[2]));
             }
+        }
 
-            clrStep = -0.144;
+        private double[] DefineSteps(Color startColor, Color endColor, int range)
+        {
+            double[] steps = new double[3];
 
-            for (int i = -MIN_HEIGHT; i < -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; ++i)
-                arrOfColors[i] = Color.FromArgb(0, 200 + (int)(clrStep * (i + MIN_HEIGHT)), 0);
+            steps[0] = (endColor.R - startColor.R) / (double)range;
 
-            clrStep = -0.0123;
+            steps[1] = (endColor.G - startColor.G) / (double)range;
 
-            for (int i = -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT; i < -MIN_HEIGHT + MAX_HEIGHT + 1; ++i)
-            {
-                int clrValue = (int)((i + MIN_HEIGHT - MIN_MOUNTAIN_HEIGHT) * clrStep);
+            steps[2] = (endColor.B - startColor.B) / (double)range;
 
-                arrOfColors[i] = Color.FromArgb(255 + clrValue * 2, 210 + clrValue * 2, 100 + clrValue);
-            }
+            return steps;
         }
 
         private Point Diamond(Point p1, Point p2, Point p3, Point p4, int lenght)
