@@ -1,6 +1,6 @@
 ﻿namespace Diamond_square
 {
-    partial class Form
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -52,6 +52,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1bar)).BeginInit();
@@ -311,11 +312,22 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "4";
             // 
-            // Form
+            // settings
+            // 
+            this.settings.Location = new System.Drawing.Point(539, 458);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(161, 23);
+            this.settings.TabIndex = 25;
+            this.settings.Text = "Дополнительные настройки";
+            this.settings.UseVisualStyleBackColor = true;
+            this.settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 537);
+            this.Controls.Add(this.settings);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -344,7 +356,7 @@
             this.MaximumSize = new System.Drawing.Size(728, 576);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(728, 576);
-            this.Name = "Form";
+            this.Name = "mainForm";
             this.Text = "Diamond square";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).EndInit();
@@ -354,7 +366,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.p4bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -383,5 +394,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button settings;
     }
 }

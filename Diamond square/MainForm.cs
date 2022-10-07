@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Diamond_square
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class MainForm : Form
     {
         const int IMAGE_SIZE = 512;
 
-        const int MAX_HEIGHT = 8848;
+        int maxDepth;
 
-        const int MIN_HEIGHT = -11034;
+        int minOceanDepth;
 
-        const int MIN_MOUNTAIN_HEIGHT = 1000;
+        int minMountainHeight;
 
-        const int SNOW_LINE = 4675;
+        int snowLineHeight;
 
-        const int MIN_OCEAN_DEEP = -500;
+        int maxHeight;
+
+        SettingsForm settingsForm;
 
         Bitmap bmp;
 
@@ -30,7 +32,7 @@ namespace Diamond_square
 
         float roughnessFactor;
 
-        public Form()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -41,11 +43,15 @@ namespace Diamond_square
 
         private void Initialize()
         {
+            settingsForm = new SettingsForm();
+
+            ChangeSettings(settingsForm);
+
             bmp = new Bitmap(IMAGE_SIZE + 1, IMAGE_SIZE + 1);
 
             arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
 
-            arrOfColors = new Color[MAX_HEIGHT - MIN_HEIGHT + 1];
+            arrOfColors = new Color[maxHeight - maxDepth + 1];
 
             rnd = new Random();
 
@@ -140,7 +146,7 @@ namespace Diamond_square
 
         private void Draw(Point p)
         {
-            Color color = arrOfColors[arrOfHeights[p.X, p.Y] + -MIN_HEIGHT];
+            Color color = arrOfColors[arrOfHeights[p.X, p.Y] + -maxDepth];
 
             bmp.SetPixel(p.X, p.Y, color);
         }
@@ -169,15 +175,15 @@ namespace Diamond_square
 
             int i = 0;
 
-            FillBiome(ref i, -MIN_HEIGHT + MIN_OCEAN_DEEP, MIN_OCEAN_DEEP - MIN_HEIGHT, oceanStart, oceanEnd);
+            FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth, oceanStart, oceanEnd);
 
-            FillBiome(ref i, -MIN_HEIGHT, -MIN_OCEAN_DEEP, seaStart, seaEnd);
+            FillBiome(ref i, -maxDepth, -minOceanDepth, seaStart, seaEnd);
 
-            FillBiome(ref i, -MIN_HEIGHT + MIN_MOUNTAIN_HEIGHT, MIN_MOUNTAIN_HEIGHT, landStart, landEnd);
+            FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight, landStart, landEnd);
 
-            FillBiome(ref i, -MIN_HEIGHT + SNOW_LINE, SNOW_LINE - MIN_MOUNTAIN_HEIGHT, mountainStart, mountainEnd);
+            FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight, mountainStart, mountainEnd);
 
-            FillBiome(ref i, -MIN_HEIGHT + MAX_HEIGHT + 1, MAX_HEIGHT - SNOW_LINE, snowStart, snowEnd);
+            FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight, snowStart, snowEnd);
         }
 
         private void FillBiome(ref int i, int cycleEnd, int range, Color startColor, Color endColor)
@@ -227,9 +233,9 @@ namespace Diamond_square
 
         private void CheckExtremeValues(Point p)
         {
-            int height = Math.Max(arrOfHeights[p.X, p.Y], MIN_HEIGHT);
+            int height = Math.Max(arrOfHeights[p.X, p.Y], maxDepth);
 
-            arrOfHeights[p.X, p.Y] = Math.Min(height, MAX_HEIGHT);
+            arrOfHeights[p.X, p.Y] = Math.Min(height, maxHeight);
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -241,8 +247,6 @@ namespace Diamond_square
                 OverwritePrompt = true,
 
                 CheckPathExists = true,
-
-                ShowHelp = true,
 
                 Filter = "JPG (*.JPG)|*.JPG|BMP (*.BMP)|*.BMP|PNG (*.PNG)|*.PNG|GIF (*.GIF)|*.GIF"
             };
@@ -280,6 +284,11 @@ namespace Diamond_square
 
         private void Scroller(object sender, EventArgs e)
         {
+            ChangeTexts();
+        }
+
+        private void ChangeTexts()
+        {
             label1.Text = p1bar.Value.ToString();
 
             label2.Text = p2bar.Value.ToString();
@@ -290,5 +299,43 @@ namespace Diamond_square
         }
 
         private void Exit_Click(object sender, EventArgs e) => Close();
+
+        private void Settings_Click(object sender, EventArgs e)
+        {     
+            settingsForm.FormClosed += (object s, FormClosedEventArgs args) => ChangeSettings(settingsForm);
+
+            settingsForm.ShowDialog();
+        }
+
+        private void ChangeSettings(SettingsForm form)
+        {
+            maxDepth = form.maxDepth;
+
+            minOceanDepth = form.minOceanDepth;
+
+            minMountainHeight = form.minMountainHeight;
+
+            snowLineHeight = form.snowLineHeight;
+
+            maxHeight = form.maxHeight;
+
+            p1bar.Maximum = maxHeight;
+
+            p2bar.Maximum = maxHeight;
+
+            p3bar.Maximum = maxHeight;
+
+            p4bar.Maximum = maxHeight;
+
+            p1bar.Minimum = maxDepth;
+
+            p2bar.Minimum = maxDepth;
+
+            p3bar.Minimum = maxDepth;
+
+            p4bar.Minimum = maxDepth;
+
+            ChangeTexts();
+        }
     }
 }

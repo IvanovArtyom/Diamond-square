@@ -1,7 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Diamond_square.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MaxDepth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-11034</Value>
+    </Setting>
+    <Setting Name="MinOceanDepth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-500</Value>
+    </Setting>
+    <Setting Name="MinMountainHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="SnowLineHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4675</Value>
+    </Setting>
+    <Setting Name="MaxHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8848</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
