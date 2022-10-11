@@ -1,5 +1,4 @@
-﻿
-namespace Diamond_square
+﻿namespace Diamond_square
 {
     partial class SettingsForm
     {
@@ -34,17 +33,18 @@ namespace Diamond_square
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.NumUpDownMaxHeight = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownMaxHeight = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.NumUpDownSnowLineHeight = new System.Windows.Forms.NumericUpDown();
-            this.NumUpDownMinMountainHeight = new System.Windows.Forms.NumericUpDown();
-            this.NumUpDownMinOceanDepth = new System.Windows.Forms.NumericUpDown();
-            this.NumUpDownMaxDepth = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMaxHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownSnowLineHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMinMountainHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMinOceanDepth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMaxDepth)).BeginInit();
+            this.numUpDownSnowLineHeight = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownMinMountainHeight = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownMinOceanDepth = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownMaxDepth = new System.Windows.Forms.NumericUpDown();
+            this.defaultSettings = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownSnowLineHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinMountainHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinOceanDepth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxDepth)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,25 +97,25 @@ namespace Diamond_square
             this.label5.TabIndex = 4;
             this.label5.Text = "Максимальная высота (м):";
             // 
-            // NumUpDownMaxHeight
+            // numUpDownMaxHeight
             // 
-            this.NumUpDownMaxHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MaxHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.NumUpDownMaxHeight.Location = new System.Drawing.Point(310, 210);
-            this.NumUpDownMaxHeight.Maximum = new decimal(new int[] {
+            this.numUpDownMaxHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MaxHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numUpDownMaxHeight.Location = new System.Drawing.Point(310, 210);
+            this.numUpDownMaxHeight.Maximum = new decimal(new int[] {
             50000,
             0,
             0,
             0});
-            this.NumUpDownMaxHeight.Minimum = new decimal(new int[] {
+            this.numUpDownMaxHeight.Minimum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.NumUpDownMaxHeight.Name = "NumUpDownMaxHeight";
-            this.NumUpDownMaxHeight.Size = new System.Drawing.Size(60, 20);
-            this.NumUpDownMaxHeight.TabIndex = 9;
-            this.NumUpDownMaxHeight.Value = global::Diamond_square.Properties.Settings.Default.MaxHeight;
-            this.NumUpDownMaxHeight.ValueChanged += new System.EventHandler(this.NumUpDownMaxHeight_ValueChanged);
+            this.numUpDownMaxHeight.Name = "numUpDownMaxHeight";
+            this.numUpDownMaxHeight.Size = new System.Drawing.Size(60, 20);
+            this.numUpDownMaxHeight.TabIndex = 9;
+            this.numUpDownMaxHeight.Value = global::Diamond_square.Properties.Settings.Default.MaxHeight;
+            this.numUpDownMaxHeight.ValueChanged += new System.EventHandler(this.NumUpDownMaxHeight_ValueChanged);
             // 
             // label6
             // 
@@ -127,114 +127,125 @@ namespace Diamond_square
             this.label6.TabIndex = 10;
             this.label6.Text = "Настройка экстремальных точек";
             // 
-            // NumUpDownSnowLineHeight
+            // numUpDownSnowLineHeight
             // 
-            this.NumUpDownSnowLineHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "SnowLineHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.NumUpDownSnowLineHeight.Location = new System.Drawing.Point(310, 170);
-            this.NumUpDownSnowLineHeight.Maximum = new decimal(new int[] {
+            this.numUpDownSnowLineHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "SnowLineHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numUpDownSnowLineHeight.Location = new System.Drawing.Point(310, 170);
+            this.numUpDownSnowLineHeight.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.NumUpDownSnowLineHeight.Minimum = new decimal(new int[] {
+            this.numUpDownSnowLineHeight.Minimum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.NumUpDownSnowLineHeight.Name = "NumUpDownSnowLineHeight";
-            this.NumUpDownSnowLineHeight.Size = new System.Drawing.Size(60, 20);
-            this.NumUpDownSnowLineHeight.TabIndex = 8;
-            this.NumUpDownSnowLineHeight.Value = global::Diamond_square.Properties.Settings.Default.SnowLineHeight;
-            this.NumUpDownSnowLineHeight.ValueChanged += new System.EventHandler(this.NumUpDownSnowLineHeight_ValueChanged);
+            this.numUpDownSnowLineHeight.Name = "numUpDownSnowLineHeight";
+            this.numUpDownSnowLineHeight.Size = new System.Drawing.Size(60, 20);
+            this.numUpDownSnowLineHeight.TabIndex = 8;
+            this.numUpDownSnowLineHeight.Value = global::Diamond_square.Properties.Settings.Default.SnowLineHeight;
+            this.numUpDownSnowLineHeight.ValueChanged += new System.EventHandler(this.NumUpDownSnowLineHeight_ValueChanged);
             // 
-            // NumUpDownMinMountainHeight
+            // numUpDownMinMountainHeight
             // 
-            this.NumUpDownMinMountainHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MinMountainHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.NumUpDownMinMountainHeight.Location = new System.Drawing.Point(310, 130);
-            this.NumUpDownMinMountainHeight.Maximum = new decimal(new int[] {
+            this.numUpDownMinMountainHeight.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MinMountainHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numUpDownMinMountainHeight.Location = new System.Drawing.Point(310, 130);
+            this.numUpDownMinMountainHeight.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
-            this.NumUpDownMinMountainHeight.Minimum = new decimal(new int[] {
+            this.numUpDownMinMountainHeight.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.NumUpDownMinMountainHeight.Name = "NumUpDownMinMountainHeight";
-            this.NumUpDownMinMountainHeight.Size = new System.Drawing.Size(60, 20);
-            this.NumUpDownMinMountainHeight.TabIndex = 7;
-            this.NumUpDownMinMountainHeight.Value = global::Diamond_square.Properties.Settings.Default.MinMountainHeight;
-            this.NumUpDownMinMountainHeight.ValueChanged += new System.EventHandler(this.NumUpDownMinMountainHeight_ValueChanged);
+            this.numUpDownMinMountainHeight.Name = "numUpDownMinMountainHeight";
+            this.numUpDownMinMountainHeight.Size = new System.Drawing.Size(60, 20);
+            this.numUpDownMinMountainHeight.TabIndex = 7;
+            this.numUpDownMinMountainHeight.Value = global::Diamond_square.Properties.Settings.Default.MinMountainHeight;
+            this.numUpDownMinMountainHeight.ValueChanged += new System.EventHandler(this.NumUpDownMinMountainHeight_ValueChanged);
             // 
-            // NumUpDownMinOceanDepth
+            // numUpDownMinOceanDepth
             // 
-            this.NumUpDownMinOceanDepth.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MinOceanDepth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.NumUpDownMinOceanDepth.Location = new System.Drawing.Point(310, 90);
-            this.NumUpDownMinOceanDepth.Maximum = new decimal(new int[] {
+            this.numUpDownMinOceanDepth.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MinOceanDepth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numUpDownMinOceanDepth.Location = new System.Drawing.Point(310, 90);
+            this.numUpDownMinOceanDepth.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.NumUpDownMinOceanDepth.Minimum = new decimal(new int[] {
+            this.numUpDownMinOceanDepth.Minimum = new decimal(new int[] {
             5000,
             0,
             0,
             -2147483648});
-            this.NumUpDownMinOceanDepth.Name = "NumUpDownMinOceanDepth";
-            this.NumUpDownMinOceanDepth.Size = new System.Drawing.Size(60, 20);
-            this.NumUpDownMinOceanDepth.TabIndex = 6;
-            this.NumUpDownMinOceanDepth.Value = global::Diamond_square.Properties.Settings.Default.MinOceanDepth;
-            this.NumUpDownMinOceanDepth.ValueChanged += new System.EventHandler(this.NumUpDownMinOceanDepth_ValueChanged);
+            this.numUpDownMinOceanDepth.Name = "numUpDownMinOceanDepth";
+            this.numUpDownMinOceanDepth.Size = new System.Drawing.Size(60, 20);
+            this.numUpDownMinOceanDepth.TabIndex = 6;
+            this.numUpDownMinOceanDepth.Value = global::Diamond_square.Properties.Settings.Default.MinOceanDepth;
+            this.numUpDownMinOceanDepth.ValueChanged += new System.EventHandler(this.NumUpDownMinOceanDepth_ValueChanged);
             // 
-            // NumUpDownMaxDepth
+            // numUpDownMaxDepth
             // 
-            this.NumUpDownMaxDepth.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MaxDepth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.NumUpDownMaxDepth.Location = new System.Drawing.Point(310, 50);
-            this.NumUpDownMaxDepth.Maximum = new decimal(new int[] {
+            this.numUpDownMaxDepth.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Diamond_square.Properties.Settings.Default, "MaxDepth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numUpDownMaxDepth.Location = new System.Drawing.Point(310, 50);
+            this.numUpDownMaxDepth.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.NumUpDownMaxDepth.Minimum = new decimal(new int[] {
+            this.numUpDownMaxDepth.Minimum = new decimal(new int[] {
             50000,
             0,
             0,
             -2147483648});
-            this.NumUpDownMaxDepth.Name = "NumUpDownMaxDepth";
-            this.NumUpDownMaxDepth.Size = new System.Drawing.Size(60, 20);
-            this.NumUpDownMaxDepth.TabIndex = 5;
-            this.NumUpDownMaxDepth.Value = global::Diamond_square.Properties.Settings.Default.MaxDepth;
-            this.NumUpDownMaxDepth.ValueChanged += new System.EventHandler(this.NumUpDownMaxDepth_ValueChanged);
+            this.numUpDownMaxDepth.Name = "numUpDownMaxDepth";
+            this.numUpDownMaxDepth.Size = new System.Drawing.Size(60, 20);
+            this.numUpDownMaxDepth.TabIndex = 5;
+            this.numUpDownMaxDepth.Value = global::Diamond_square.Properties.Settings.Default.MaxDepth;
+            this.numUpDownMaxDepth.ValueChanged += new System.EventHandler(this.NumUpDownMaxDepth_ValueChanged);
+            // 
+            // defaultSettings
+            // 
+            this.defaultSettings.Location = new System.Drawing.Point(15, 250);
+            this.defaultSettings.Name = "defaultSettings";
+            this.defaultSettings.Size = new System.Drawing.Size(91, 23);
+            this.defaultSettings.TabIndex = 11;
+            this.defaultSettings.Text = "По умолчанию";
+            this.defaultSettings.UseVisualStyleBackColor = true;
+            this.defaultSettings.Click += new System.EventHandler(this.DefaultSettings_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 246);
+            this.ClientSize = new System.Drawing.Size(389, 291);
+            this.Controls.Add(this.defaultSettings);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.NumUpDownMaxHeight);
-            this.Controls.Add(this.NumUpDownSnowLineHeight);
-            this.Controls.Add(this.NumUpDownMinMountainHeight);
-            this.Controls.Add(this.NumUpDownMinOceanDepth);
-            this.Controls.Add(this.NumUpDownMaxDepth);
+            this.Controls.Add(this.numUpDownMaxHeight);
+            this.Controls.Add(this.numUpDownSnowLineHeight);
+            this.Controls.Add(this.numUpDownMinMountainHeight);
+            this.Controls.Add(this.numUpDownMinOceanDepth);
+            this.Controls.Add(this.numUpDownMaxDepth);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(405, 285);
+            this.MaximumSize = new System.Drawing.Size(405, 330);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(405, 285);
+            this.MinimumSize = new System.Drawing.Size(405, 330);
             this.Name = "SettingsForm";
             this.Text = "Дополнительные настройки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMaxHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownSnowLineHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMinMountainHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMinOceanDepth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownMaxDepth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownSnowLineHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinMountainHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinOceanDepth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxDepth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,11 +258,12 @@ namespace Diamond_square
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown NumUpDownMaxDepth;
-        private System.Windows.Forms.NumericUpDown NumUpDownMinOceanDepth;
-        private System.Windows.Forms.NumericUpDown NumUpDownMinMountainHeight;
-        private System.Windows.Forms.NumericUpDown NumUpDownSnowLineHeight;
-        private System.Windows.Forms.NumericUpDown NumUpDownMaxHeight;
+        private System.Windows.Forms.NumericUpDown numUpDownMaxDepth;
+        private System.Windows.Forms.NumericUpDown numUpDownMinOceanDepth;
+        private System.Windows.Forms.NumericUpDown numUpDownMinMountainHeight;
+        private System.Windows.Forms.NumericUpDown numUpDownSnowLineHeight;
+        private System.Windows.Forms.NumericUpDown numUpDownMaxHeight;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button defaultSettings;
     }
 }

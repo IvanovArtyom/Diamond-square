@@ -36,14 +36,14 @@
             this.rBar = new System.Windows.Forms.TrackBar();
             this.labelR = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.p1bar = new System.Windows.Forms.TrackBar();
+            this.p1Bar = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.p2bar = new System.Windows.Forms.TrackBar();
+            this.p2Bar = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.p3bar = new System.Windows.Forms.TrackBar();
+            this.p3Bar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.p4bar = new System.Windows.Forms.TrackBar();
+            this.p4Bar = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,10 +55,10 @@
             this.settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p3Bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4Bar)).BeginInit();
             this.SuspendLayout();
             // 
             // picture
@@ -81,6 +81,7 @@
             // 
             // save
             // 
+            this.save.Enabled = false;
             this.save.Location = new System.Drawing.Point(625, 47);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +92,7 @@
             // 
             // clear
             // 
+            this.clear.Enabled = false;
             this.clear.Location = new System.Drawing.Point(625, 82);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(75, 23);
@@ -140,18 +142,16 @@
             this.label.TabIndex = 7;
             this.label.Text = "Шероховатость";
             // 
-            // p1bar
+            // p1Bar
             // 
-            this.p1bar.LargeChange = 100;
-            this.p1bar.Location = new System.Drawing.Point(539, 273);
-            this.p1bar.Maximum = 8848;
-            this.p1bar.Minimum = -11034;
-            this.p1bar.Name = "p1bar";
-            this.p1bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p1bar.Size = new System.Drawing.Size(45, 147);
-            this.p1bar.TabIndex = 8;
-            this.p1bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p1bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p1Bar.LargeChange = 100;
+            this.p1Bar.Location = new System.Drawing.Point(539, 273);
+            this.p1Bar.Name = "p1Bar";
+            this.p1Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p1Bar.Size = new System.Drawing.Size(45, 147);
+            this.p1Bar.TabIndex = 10;
+            this.p1Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p1Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
             // label1
             // 
@@ -173,18 +173,16 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "0";
             // 
-            // p2bar
+            // p2Bar
             // 
-            this.p2bar.LargeChange = 100;
-            this.p2bar.Location = new System.Drawing.Point(585, 273);
-            this.p2bar.Maximum = 8848;
-            this.p2bar.Minimum = -11034;
-            this.p2bar.Name = "p2bar";
-            this.p2bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p2bar.Size = new System.Drawing.Size(45, 147);
-            this.p2bar.TabIndex = 10;
-            this.p2bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p2bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p2Bar.LargeChange = 100;
+            this.p2Bar.Location = new System.Drawing.Point(585, 273);
+            this.p2Bar.Name = "p2Bar";
+            this.p2Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p2Bar.Size = new System.Drawing.Size(45, 147);
+            this.p2Bar.TabIndex = 10;
+            this.p2Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p2Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
             // label3
             // 
@@ -196,18 +194,16 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "0";
             // 
-            // p3bar
+            // p3Bar
             // 
-            this.p3bar.LargeChange = 100;
-            this.p3bar.Location = new System.Drawing.Point(631, 273);
-            this.p3bar.Maximum = 8848;
-            this.p3bar.Minimum = -11034;
-            this.p3bar.Name = "p3bar";
-            this.p3bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p3bar.Size = new System.Drawing.Size(45, 147);
-            this.p3bar.TabIndex = 12;
-            this.p3bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p3bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p3Bar.LargeChange = 100;
+            this.p3Bar.Location = new System.Drawing.Point(631, 273);
+            this.p3Bar.Name = "p3Bar";
+            this.p3Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p3Bar.Size = new System.Drawing.Size(45, 147);
+            this.p3Bar.TabIndex = 10;
+            this.p3Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p3Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
             // label4
             // 
@@ -219,18 +215,16 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "0";
             // 
-            // p4bar
+            // p4Bar
             // 
-            this.p4bar.LargeChange = 100;
-            this.p4bar.Location = new System.Drawing.Point(677, 273);
-            this.p4bar.Maximum = 8848;
-            this.p4bar.Minimum = -11034;
-            this.p4bar.Name = "p4bar";
-            this.p4bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p4bar.Size = new System.Drawing.Size(45, 147);
-            this.p4bar.TabIndex = 14;
-            this.p4bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p4bar.Scroll += new System.EventHandler(this.Scroller);
+            this.p4Bar.LargeChange = 100;
+            this.p4Bar.Location = new System.Drawing.Point(677, 273);
+            this.p4Bar.Name = "p4Bar";
+            this.p4Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.p4Bar.Size = new System.Drawing.Size(45, 147);
+            this.p4Bar.TabIndex = 10;
+            this.p4Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.p4Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
             // label6
             // 
@@ -322,7 +316,7 @@
             this.settings.UseVisualStyleBackColor = true;
             this.settings.Click += new System.EventHandler(this.Settings_Click);
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,13 +331,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.p4bar);
+            this.Controls.Add(this.p4Bar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.p3bar);
+            this.Controls.Add(this.p3Bar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.p2bar);
+            this.Controls.Add(this.p2Bar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.p1bar);
+            this.Controls.Add(this.p1Bar);
             this.Controls.Add(this.label);
             this.Controls.Add(this.labelR);
             this.Controls.Add(this.rBar);
@@ -356,16 +350,17 @@
             this.MaximumSize = new System.Drawing.Size(728, 576);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(728, 576);
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.Text = "Diamond square";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p3Bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4Bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -378,14 +373,14 @@
         private System.Windows.Forms.TrackBar rBar;
         private System.Windows.Forms.Label labelR;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TrackBar p1bar;
+        private System.Windows.Forms.TrackBar p1Bar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TrackBar p2bar;
+        private System.Windows.Forms.TrackBar p2Bar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TrackBar p3bar;
+        private System.Windows.Forms.TrackBar p3Bar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TrackBar p4bar;
+        private System.Windows.Forms.TrackBar p4Bar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

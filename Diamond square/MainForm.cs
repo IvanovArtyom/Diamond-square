@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Diamond_square
@@ -20,7 +19,7 @@ namespace Diamond_square
 
         int maxHeight;
 
-        SettingsForm settingsForm;
+        readonly SettingsForm settingsForm = new SettingsForm();
 
         Bitmap bmp;
 
@@ -43,9 +42,7 @@ namespace Diamond_square
 
         private void Initialize()
         {
-            settingsForm = new SettingsForm();
-
-            ChangeSettings(settingsForm);
+            ChangeSettings();
 
             bmp = new Bitmap(IMAGE_SIZE + 1, IMAGE_SIZE + 1);
 
@@ -69,17 +66,33 @@ namespace Diamond_square
 
         private int Rand() => rnd.Next(-1, 1) == 0 ? 1 : -1;
 
-        private void Start_Click(object sender, EventArgs e)
+        private async void Start_Click(object sender, EventArgs e)
         {
             start.Enabled = false;
 
-            arrOfHeights[0, 0] = p1bar.Value;
+            save.Enabled = false;
 
-            arrOfHeights[IMAGE_SIZE, 0] = p2bar.Value;
+            clear.Enabled = false;
 
-            arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3bar.Value;
+            rBar.Enabled = false;
 
-            arrOfHeights[0, IMAGE_SIZE] = p4bar.Value;
+            p1Bar.Enabled = false;
+
+            p2Bar.Enabled = false;
+
+            p3Bar.Enabled = false;
+
+            p4Bar.Enabled = false;
+
+            settings.Enabled = false;
+
+            arrOfHeights[0, 0] = p1Bar.Value;
+
+            arrOfHeights[IMAGE_SIZE, 0] = p2Bar.Value;
+
+            arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3Bar.Value;
+
+            arrOfHeights[0, IMAGE_SIZE] = p4Bar.Value;
 
             Draw(new Point(0, IMAGE_SIZE)); 
             
@@ -89,9 +102,13 @@ namespace Diamond_square
             
             Draw(new Point(0, 0));
 
-            Thread secondThread = new Thread(new ThreadStart(DiamondSquare));
+            Task task = Task.Run(() => DiamondSquare());
 
-            secondThread.Start();
+            await task;
+
+            save.Enabled = true;
+
+            clear.Enabled = true;
         }
 
         private void DiamondSquare()
@@ -270,6 +287,22 @@ namespace Diamond_square
         {
             start.Enabled = true;
 
+            rBar.Enabled = true;
+
+            p1Bar.Enabled = true;
+
+            p2Bar.Enabled = true;
+
+            p3Bar.Enabled = true;
+
+            p4Bar.Enabled = true;
+
+            settings.Enabled = true;
+
+            clear.Enabled = false;
+
+            save.Enabled = false;
+
             Initialize();
 
             ClearPicture();
@@ -289,51 +322,53 @@ namespace Diamond_square
 
         private void ChangeTexts()
         {
-            label1.Text = p1bar.Value.ToString();
+            label1.Text = p1Bar.Value.ToString();
 
-            label2.Text = p2bar.Value.ToString();
+            label2.Text = p2Bar.Value.ToString();
 
-            label3.Text = p3bar.Value.ToString();
+            label3.Text = p3Bar.Value.ToString();
 
-            label4.Text = p4bar.Value.ToString();
+            label4.Text = p4Bar.Value.ToString();
         }
 
         private void Exit_Click(object sender, EventArgs e) => Close();
 
         private void Settings_Click(object sender, EventArgs e)
-        {     
-            settingsForm.FormClosed += (object s, FormClosedEventArgs args) => ChangeSettings(settingsForm);
-
+        {
             settingsForm.ShowDialog();
+
+            settingsForm.FormClosed += (object s, FormClosedEventArgs args) => ChangeSettings();
+
+            Initialize();
         }
 
-        private void ChangeSettings(SettingsForm form)
+        private void ChangeSettings()
         {
-            maxDepth = form.maxDepth;
+            maxDepth = settingsForm.maxDepth;
 
-            minOceanDepth = form.minOceanDepth;
+            minOceanDepth = settingsForm.minOceanDepth;
 
-            minMountainHeight = form.minMountainHeight;
+            minMountainHeight = settingsForm.minMountainHeight;
 
-            snowLineHeight = form.snowLineHeight;
+            snowLineHeight = settingsForm.snowLineHeight;
 
-            maxHeight = form.maxHeight;
+            maxHeight = settingsForm.maxHeight;
 
-            p1bar.Maximum = maxHeight;
+            p1Bar.Maximum = maxHeight;
 
-            p2bar.Maximum = maxHeight;
+            p2Bar.Maximum = maxHeight;
 
-            p3bar.Maximum = maxHeight;
+            p3Bar.Maximum = maxHeight;
 
-            p4bar.Maximum = maxHeight;
+            p4Bar.Maximum = maxHeight;
 
-            p1bar.Minimum = maxDepth;
+            p1Bar.Minimum = maxDepth;
 
-            p2bar.Minimum = maxDepth;
+            p2Bar.Minimum = maxDepth;
 
-            p3bar.Minimum = maxDepth;
+            p3Bar.Minimum = maxDepth;
 
-            p4bar.Minimum = maxDepth;
+            p4Bar.Minimum = maxDepth;
 
             ChangeTexts();
         }

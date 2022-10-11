@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Diamond_square
 {
@@ -11,27 +12,27 @@ namespace Diamond_square
 
         public int maxDepth
         {
-            get => (int)NumUpDownMaxDepth.Value; 
+            get => (int)numUpDownMaxDepth.Value; 
         }
 
         public int minOceanDepth
         {
-            get => (int)NumUpDownMinOceanDepth.Value;
+            get => (int)numUpDownMinOceanDepth.Value;
         }
 
         public int minMountainHeight
         {
-            get => (int)NumUpDownMinMountainHeight.Value;
+            get => (int)numUpDownMinMountainHeight.Value;
         }
 
         public int snowLineHeight
         {
-            get => (int)NumUpDownSnowLineHeight.Value;
+            get => (int)numUpDownSnowLineHeight.Value;
         }
 
         public int maxHeight
         {
-            get => (int)NumUpDownMaxHeight.Value;
+            get => (int)numUpDownMaxHeight.Value;
         }
 
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,37 +40,50 @@ namespace Diamond_square
             Properties.Settings.Default.Save();
         }
 
-        private void NumUpDownMaxDepth_ValueChanged(object sender, System.EventArgs e)
+        private void NumUpDownMaxDepth_ValueChanged(object sender, EventArgs e)
         {
             if (maxDepth >= minOceanDepth)
-                NumUpDownMaxDepth.Value = minOceanDepth - 1;
+                numUpDownMaxDepth.Value = minOceanDepth - 1;
         }
 
-        private void NumUpDownMinOceanDepth_ValueChanged(object sender, System.EventArgs e)
+        private void NumUpDownMinOceanDepth_ValueChanged(object sender, EventArgs e)
         {
             if (minOceanDepth <= maxDepth)
-                NumUpDownMinOceanDepth.Value = maxDepth + 1;
+                numUpDownMinOceanDepth.Value = maxDepth + 1;
         }
 
-        private void NumUpDownMinMountainHeight_ValueChanged(object sender, System.EventArgs e)
+        private void NumUpDownMinMountainHeight_ValueChanged(object sender, EventArgs e)
         {
             if (minMountainHeight >= snowLineHeight)
-                NumUpDownMinMountainHeight.Value = snowLineHeight - 1;
+                numUpDownMinMountainHeight.Value = snowLineHeight - 1;
         }
 
-        private void NumUpDownSnowLineHeight_ValueChanged(object sender, System.EventArgs e)
+        private void NumUpDownSnowLineHeight_ValueChanged(object sender, EventArgs e)
         {
             if (snowLineHeight <= minMountainHeight)
-                NumUpDownSnowLineHeight.Value = minMountainHeight + 1;
+                numUpDownSnowLineHeight.Value = minMountainHeight + 1;
 
             if (snowLineHeight >= maxHeight)
-                NumUpDownSnowLineHeight.Value = maxHeight - 1;
+                numUpDownSnowLineHeight.Value = maxHeight - 1;
         }
 
-        private void NumUpDownMaxHeight_ValueChanged(object sender, System.EventArgs e)
+        private void NumUpDownMaxHeight_ValueChanged(object sender, EventArgs e)
         {
             if (maxHeight <= snowLineHeight)
-                NumUpDownMaxHeight.Value = snowLineHeight + 1;
+                numUpDownMaxHeight.Value = snowLineHeight + 1;
+        }
+
+        private void DefaultSettings_Click(object sender, EventArgs e)
+        {
+            numUpDownMaxDepth.Value = -11034;
+
+            numUpDownMinOceanDepth.Value = -500;
+
+            numUpDownMinMountainHeight.Value = 1000;
+
+            numUpDownSnowLineHeight.Value = 4675;
+
+            numUpDownMaxHeight.Value = 8848;
         }
     }
 }
