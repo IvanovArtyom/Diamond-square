@@ -82,5 +82,125 @@ namespace Diamond_square.Properties {
                 this["MaxHeight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color OceanStartColor {
+            get {
+                return ((global::System.Drawing.Color)(this["OceanStartColor"]));
+            }
+            set {
+                this["OceanStartColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 49, 102")]
+        public global::System.Drawing.Color OceanEndColor {
+            get {
+                return ((global::System.Drawing.Color)(this["OceanEndColor"]));
+            }
+            set {
+                this["OceanEndColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 49, 102")]
+        public global::System.Drawing.Color SeaStartColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SeaStartColor"]));
+            }
+            set {
+                this["SeaStartColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("66, 170, 250")]
+        public global::System.Drawing.Color SeaEndColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SeaEndColor"]));
+            }
+            set {
+                this["SeaEndColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("107, 219, 107")]
+        public global::System.Drawing.Color LandStartColor {
+            get {
+                return ((global::System.Drawing.Color)(this["LandStartColor"]));
+            }
+            set {
+                this["LandStartColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("14, 59, 14")]
+        public global::System.Drawing.Color LandEndColor {
+            get {
+                return ((global::System.Drawing.Color)(this["LandEndColor"]));
+            }
+            set {
+                this["LandEndColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 218, 158")]
+        public global::System.Drawing.Color MountainStartColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MountainStartColor"]));
+            }
+            set {
+                this["MountainStartColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5, 3, 0")]
+        public global::System.Drawing.Color MountainEndColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MountainEndColor"]));
+            }
+            set {
+                this["MountainEndColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5, 3, 0")]
+        public global::System.Drawing.Color SnowStartColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SnowStartColor"]));
+            }
+            set {
+                this["SnowStartColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Snow")]
+        public global::System.Drawing.Color SnowEndColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SnowEndColor"]));
+            }
+            set {
+                this["SnowEndColor"] = value;
+            }
+        }
     }
 }

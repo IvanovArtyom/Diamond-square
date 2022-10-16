@@ -44,17 +44,19 @@ namespace Diamond_square
         {
             ChangeSettings();
 
+            Color[] definingСolors = settingsForm.Colors;
+
             bmp = new Bitmap(IMAGE_SIZE + 1, IMAGE_SIZE + 1);
 
             arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
 
             arrOfColors = new Color[maxHeight - maxDepth + 1];
 
+            FillColors(definingСolors);
+
             rnd = new Random();
 
             roughnessFactor = (float)(rBar.Value * 0.01);
-
-            FillColors();
         }
 
         private void ClearPicture()
@@ -168,39 +170,19 @@ namespace Diamond_square
             bmp.SetPixel(p.X, p.Y, color);
         }
 
-        private void FillColors()
+        private void FillColors(Color[] colors)
         {
-            Color oceanStart = Color.FromArgb(0, 0, 0);
-
-            Color oceanEnd = Color.FromArgb(0, 49, 102);
-
-            Color seaStart = Color.FromArgb(0, 49, 102);
-
-            Color seaEnd = Color.FromArgb(66, 170, 250);
-
-            Color landStart = Color.FromArgb(107, 219, 107);
-
-            Color landEnd = Color.FromArgb(14, 59, 14);
-
-            Color mountainStart = Color.FromArgb(255, 218, 158);
-
-            Color mountainEnd = Color.FromArgb(5, 3, 0);
-
-            Color snowStart = Color.FromArgb(5, 3, 0);
-
-            Color snowEnd = Color.FromArgb(255, 250, 250);
-
             int i = 0;
 
-            FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth, oceanStart, oceanEnd);
+            FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth, colors[0], colors[1]);
 
-            FillBiome(ref i, -maxDepth, -minOceanDepth, seaStart, seaEnd);
+            FillBiome(ref i, -maxDepth, -minOceanDepth, colors[2], colors[3]);
 
-            FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight, landStart, landEnd);
+            FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight, colors[4], colors[5]);
 
-            FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight, mountainStart, mountainEnd);
+            FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight, colors[6], colors[7]);
 
-            FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight, snowStart, snowEnd);
+            FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight, colors[8], colors[9]);
         }
 
         private void FillBiome(ref int i, int cycleEnd, int range, Color startColor, Color endColor)
@@ -344,15 +326,15 @@ namespace Diamond_square
 
         private void ChangeSettings()
         {
-            maxDepth = settingsForm.maxDepth;
+            maxDepth = settingsForm.MaxDepth;
 
-            minOceanDepth = settingsForm.minOceanDepth;
+            minOceanDepth = settingsForm.MinOceanDepth;
 
-            minMountainHeight = settingsForm.minMountainHeight;
+            minMountainHeight = settingsForm.MinMountainHeight;
 
-            snowLineHeight = settingsForm.snowLineHeight;
+            snowLineHeight = settingsForm.SnowLineHeight;
 
-            maxHeight = settingsForm.maxHeight;
+            maxHeight = settingsForm.MaxHeight;
 
             p1Bar.Maximum = maxHeight;
 
