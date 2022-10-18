@@ -53,6 +53,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.settings = new System.Windows.Forms.Button();
+            this.pictureResolution = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).BeginInit();
@@ -66,6 +68,7 @@
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(513, 513);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
@@ -113,10 +116,10 @@
             // 
             // rBar
             // 
-            this.rBar.Location = new System.Drawing.Point(536, 198);
+            this.rBar.Location = new System.Drawing.Point(539, 198);
             this.rBar.Maximum = 100;
             this.rBar.Name = "rBar";
-            this.rBar.Size = new System.Drawing.Size(125, 45);
+            this.rBar.Size = new System.Drawing.Size(121, 45);
             this.rBar.TabIndex = 4;
             this.rBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.rBar.Value = 100;
@@ -126,7 +129,7 @@
             // 
             this.labelR.AutoSize = true;
             this.labelR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelR.Location = new System.Drawing.Point(547, 221);
+            this.labelR.Location = new System.Drawing.Point(537, 217);
             this.labelR.Name = "labelR";
             this.labelR.Size = new System.Drawing.Size(38, 13);
             this.labelR.TabIndex = 6;
@@ -316,11 +319,37 @@
             this.settings.UseVisualStyleBackColor = true;
             this.settings.Click += new System.EventHandler(this.Settings_Click);
             // 
+            // pictureResolution
+            // 
+            this.pictureResolution.FormattingEnabled = true;
+            this.pictureResolution.Items.AddRange(new object[] {
+            "513 x 513",
+            "1025 x 1025",
+            "2049 x 2049",
+            "4097 x 4097"});
+            this.pictureResolution.Location = new System.Drawing.Point(539, 144);
+            this.pictureResolution.Name = "pictureResolution";
+            this.pictureResolution.Size = new System.Drawing.Size(121, 21);
+            this.pictureResolution.TabIndex = 26;
+            this.pictureResolution.SelectedIndexChanged += new System.EventHandler(this.PictureResolution_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(537, 118);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Разрешение";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 537);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.pictureResolution);
             this.Controls.Add(this.settings);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -390,5 +419,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button settings;
+        private System.Windows.Forms.ComboBox pictureResolution;
+        private System.Windows.Forms.Label label13;
     }
 }

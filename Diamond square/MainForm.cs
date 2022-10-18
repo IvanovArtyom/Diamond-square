@@ -7,7 +7,7 @@ namespace Diamond_square
 {
     public partial class MainForm : Form
     {
-        const int IMAGE_SIZE = 512;
+        int imageSize;
 
         int maxDepth;
 
@@ -21,13 +21,13 @@ namespace Diamond_square
 
         readonly SettingsForm settingsForm = new SettingsForm();
 
+        readonly Random rnd = new Random();
+
         Bitmap bmp;
 
         int[,] arrOfHeights;
 
         Color[] arrOfColors;
-
-        Random rnd;
 
         float roughnessFactor;
 
@@ -35,7 +35,15 @@ namespace Diamond_square
         {
             InitializeComponent();
 
+            pictureResolution.SelectedItem = "513 x 513";
+
+            bmp = new Bitmap(imageSize + 1, imageSize + 1);
+
+            arrOfHeights = new int[imageSize + 1, imageSize + 1];
+
             Initialize();
+
+            roughnessFactor = (float)(rBar.Value * 0.01);
 
             ClearPicture();
         }
@@ -46,17 +54,9 @@ namespace Diamond_square
 
             Color[] definingСolors = settingsForm.Colors;
 
-            bmp = new Bitmap(IMAGE_SIZE + 1, IMAGE_SIZE + 1);
-
-            arrOfHeights = new int[IMAGE_SIZE + 1, IMAGE_SIZE + 1];
-
             arrOfColors = new Color[maxHeight - maxDepth + 1];
 
             FillColors(definingСolors);
-
-            rnd = new Random();
-
-            roughnessFactor = (float)(rBar.Value * 0.01);
         }
 
         private void ClearPicture()
@@ -70,37 +70,22 @@ namespace Diamond_square
 
         private async void Start_Click(object sender, EventArgs e)
         {
-            start.Enabled = false;
-
-            save.Enabled = false;
-
-            clear.Enabled = false;
-
-            rBar.Enabled = false;
-
-            p1Bar.Enabled = false;
-
-            p2Bar.Enabled = false;
-
-            p3Bar.Enabled = false;
-
-            p4Bar.Enabled = false;
-
-            settings.Enabled = false;
+            start.Enabled = save.Enabled = clear.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = 
+                p3Bar.Enabled = p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = false; 
 
             arrOfHeights[0, 0] = p1Bar.Value;
 
-            arrOfHeights[IMAGE_SIZE, 0] = p2Bar.Value;
+            arrOfHeights[imageSize, 0] = p2Bar.Value;
 
-            arrOfHeights[IMAGE_SIZE, IMAGE_SIZE] = p3Bar.Value;
+            arrOfHeights[imageSize, imageSize] = p3Bar.Value;
 
-            arrOfHeights[0, IMAGE_SIZE] = p4Bar.Value;
+            arrOfHeights[0, imageSize] = p4Bar.Value;
 
-            Draw(new Point(0, IMAGE_SIZE)); 
+            Draw(new Point(0, imageSize)); 
             
-            Draw(new Point(IMAGE_SIZE, 0));
+            Draw(new Point(imageSize, 0));
 
-            Draw(new Point(IMAGE_SIZE, IMAGE_SIZE)); 
+            Draw(new Point(imageSize, imageSize)); 
             
             Draw(new Point(0, 0));
 
@@ -111,17 +96,19 @@ namespace Diamond_square
             save.Enabled = true;
 
             clear.Enabled = true;
+
+            save.Focus();
         }
 
         private void DiamondSquare()
         {
-            int step = IMAGE_SIZE;
+            int step = imageSize;
 
             while (step != 1)
             {
-                for (int i = 0; i < IMAGE_SIZE; i += step)
+                for (int i = 0; i < imageSize; i += step)
                 {
-                    for (int j = 0; j < IMAGE_SIZE; j += step)
+                    for (int j = 0; j < imageSize; j += step)
                     {
                         Point p1 = new Point(j, i);
 
@@ -213,8 +200,8 @@ namespace Diamond_square
         {
             Point p = new Point(p1.X + lenght / 2, p1.Y + lenght / 2);
 
-            arrOfHeights[p.X, p.Y] = Convert.ToInt32((arrOfHeights[p1.X, p1.Y] + arrOfHeights[p2.X, p2.Y]
-                + arrOfHeights[p3.X, p3.Y] + arrOfHeights[p4.X, p4.Y]) / 4 + roughnessFactor * lenght * Rand());
+            arrOfHeights[p.X, p.Y] = Convert.ToInt32((arrOfHeights[p1.X, p1.Y] + arrOfHeights[p2.X, p2.Y] + 
+                arrOfHeights[p3.X, p3.Y] + arrOfHeights[p4.X, p4.Y]) / 4 + roughnessFactor * lenght * Rand());
 
             CheckExtremeValues(p);
 
@@ -267,23 +254,10 @@ namespace Diamond_square
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            start.Enabled = true;
+            start.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = p3Bar.Enabled = 
+                p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = true;
 
-            rBar.Enabled = true;
-
-            p1Bar.Enabled = true;
-
-            p2Bar.Enabled = true;
-
-            p3Bar.Enabled = true;
-
-            p4Bar.Enabled = true;
-
-            settings.Enabled = true;
-
-            clear.Enabled = false;
-
-            save.Enabled = false;
+            clear.Enabled = save.Enabled = false;
 
             Initialize();
 
@@ -336,23 +310,24 @@ namespace Diamond_square
 
             maxHeight = settingsForm.MaxHeight;
 
-            p1Bar.Maximum = maxHeight;
+            p1Bar.Maximum = p2Bar.Maximum = p3Bar.Maximum = p4Bar.Maximum = maxHeight;
 
-            p2Bar.Maximum = maxHeight;
-
-            p3Bar.Maximum = maxHeight;
-
-            p4Bar.Maximum = maxHeight;
-
-            p1Bar.Minimum = maxDepth;
-
-            p2Bar.Minimum = maxDepth;
-
-            p3Bar.Minimum = maxDepth;
-
-            p4Bar.Minimum = maxDepth;
+            p1Bar.Minimum = p2Bar.Minimum = p3Bar.Minimum = p4Bar.Minimum = maxDepth;
 
             ChangeTexts();
+        }
+
+        private void PictureResolution_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            start.Focus();
+
+            string[] splitComponents = pictureResolution.SelectedItem.ToString().Split();
+
+            imageSize = int.Parse(splitComponents[0]) - 1;
+
+            bmp = new Bitmap(imageSize + 1, imageSize + 1);
+
+            arrOfHeights = new int[imageSize + 1, imageSize + 1];
         }
     }
 }
