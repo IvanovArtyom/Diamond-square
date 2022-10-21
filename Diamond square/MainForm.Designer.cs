@@ -55,6 +55,7 @@
             this.settings = new System.Windows.Forms.Button();
             this.pictureResolution = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).BeginInit();
@@ -343,11 +344,21 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Разрешение";
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(531, 47);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(88, 23);
+            this.progressBar.Step = 1;
+            this.progressBar.TabIndex = 28;
+            this.progressBar.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 537);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureResolution);
             this.Controls.Add(this.settings);
@@ -421,5 +432,6 @@
         private System.Windows.Forms.Button settings;
         private System.Windows.Forms.ComboBox pictureResolution;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

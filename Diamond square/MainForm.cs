@@ -37,10 +37,6 @@ namespace Diamond_square
 
             pictureResolution.SelectedItem = "513 x 513";
 
-            bmp = new Bitmap(imageSize + 1, imageSize + 1);
-
-            arrOfHeights = new int[imageSize + 1, imageSize + 1];
-
             Initialize();
 
             roughnessFactor = (float)(rBar.Value * 0.01);
@@ -70,6 +66,8 @@ namespace Diamond_square
 
         private async void Start_Click(object sender, EventArgs e)
         {
+            progressBar.Visible = true;
+
             start.Enabled = save.Enabled = clear.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = 
                 p3Bar.Enabled = p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = false; 
 
@@ -100,9 +98,19 @@ namespace Diamond_square
             save.Focus();
         }
 
+        private void ChangeProgressBarValueSafe(int value)
+        {
+            if (progressBar.InvokeRequired)
+                progressBar.Invoke(new Action<int>((i) => progressBar.Value = i), value);
+
+            else progressBar.Value = value;
+        }
+
         private void DiamondSquare()
         {
             int step = imageSize;
+
+            int counter = 4;
 
             while (step != 1)
             {
@@ -139,11 +147,17 @@ namespace Diamond_square
                         Draw(Square(new Point(p.X, p1.Y), h1, h2, h, step));
 
                         Draw(Square(new Point(p.X, p4.Y), h3, h4, h, step));
+
+                        counter += 5;
                     }
+
+                    ChangeProgressBarValueSafe(counter);
                 }
 
                 step /= 2;
             }
+
+            ChangeProgressBarValueSafe(progressBar.Maximum);
 
             FillPicture();
         }
@@ -259,6 +273,10 @@ namespace Diamond_square
 
             clear.Enabled = save.Enabled = false;
 
+            progressBar.Value = 0;
+
+            progressBar.Visible = false;
+
             Initialize();
 
             ClearPicture();
@@ -328,6 +346,8 @@ namespace Diamond_square
             bmp = new Bitmap(imageSize + 1, imageSize + 1);
 
             arrOfHeights = new int[imageSize + 1, imageSize + 1];
+
+            progressBar.Maximum = (int)((imageSize + 1) * (imageSize + 1) * 1.67);
         }
     }
 }
