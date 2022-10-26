@@ -16,6 +16,6 @@ S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond s
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.CoreCompileInputs.cache
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.exe
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.pdb
-S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.AssemblyReference.cache
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.mainForm.resources
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.settingsForm.resources
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.AssemblyReference.cache

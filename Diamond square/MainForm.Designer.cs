@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.picture = new System.Windows.Forms.PictureBox();
             this.start = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@
             // 
             // picture
             // 
+            this.picture.Enabled = false;
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(513, 513);
@@ -110,18 +112,18 @@
             this.exit.Location = new System.Drawing.Point(625, 502);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(75, 23);
-            this.exit.TabIndex = 4;
+            this.exit.TabIndex = 11;
             this.exit.Text = "Выход";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // rBar
             // 
-            this.rBar.Location = new System.Drawing.Point(539, 198);
+            this.rBar.Location = new System.Drawing.Point(533, 198);
             this.rBar.Maximum = 100;
             this.rBar.Name = "rBar";
             this.rBar.Size = new System.Drawing.Size(121, 45);
-            this.rBar.TabIndex = 4;
+            this.rBar.TabIndex = 5;
             this.rBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.rBar.Value = 100;
             this.rBar.Scroll += new System.EventHandler(this.Rbar_Scroll);
@@ -153,7 +155,7 @@
             this.p1Bar.Name = "p1Bar";
             this.p1Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.p1Bar.Size = new System.Drawing.Size(45, 147);
-            this.p1Bar.TabIndex = 10;
+            this.p1Bar.TabIndex = 6;
             this.p1Bar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.p1Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
@@ -184,7 +186,7 @@
             this.p2Bar.Name = "p2Bar";
             this.p2Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.p2Bar.Size = new System.Drawing.Size(45, 147);
-            this.p2Bar.TabIndex = 10;
+            this.p2Bar.TabIndex = 7;
             this.p2Bar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.p2Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
@@ -205,7 +207,7 @@
             this.p3Bar.Name = "p3Bar";
             this.p3Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.p3Bar.Size = new System.Drawing.Size(45, 147);
-            this.p3Bar.TabIndex = 10;
+            this.p3Bar.TabIndex = 8;
             this.p3Bar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.p3Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
@@ -226,7 +228,7 @@
             this.p4Bar.Name = "p4Bar";
             this.p4Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.p4Bar.Size = new System.Drawing.Size(45, 147);
-            this.p4Bar.TabIndex = 10;
+            this.p4Bar.TabIndex = 9;
             this.p4Bar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.p4Bar.Scroll += new System.EventHandler(this.Scroller);
             // 
@@ -274,54 +276,55 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(543, 264);
+            this.label9.Location = new System.Drawing.Point(531, 264);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 12);
+            this.label9.Size = new System.Drawing.Size(38, 12);
             this.label9.TabIndex = 21;
-            this.label9.Text = "1";
+            this.label9.Text = "Угол 1";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(590, 264);
+            this.label10.Location = new System.Drawing.Point(577, 264);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 12);
+            this.label10.Size = new System.Drawing.Size(38, 12);
             this.label10.TabIndex = 22;
-            this.label10.Text = "2";
+            this.label10.Text = "Угол 2";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(636, 264);
+            this.label11.Location = new System.Drawing.Point(623, 264);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 12);
+            this.label11.Size = new System.Drawing.Size(38, 12);
             this.label11.TabIndex = 23;
-            this.label11.Text = "3";
+            this.label11.Text = "Угол 3";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(682, 264);
+            this.label12.Location = new System.Drawing.Point(669, 264);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(11, 12);
+            this.label12.Size = new System.Drawing.Size(38, 12);
             this.label12.TabIndex = 24;
-            this.label12.Text = "4";
+            this.label12.Text = "Угол 4";
             // 
             // settings
             // 
             this.settings.Location = new System.Drawing.Point(539, 458);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(161, 23);
-            this.settings.TabIndex = 25;
+            this.settings.TabIndex = 10;
             this.settings.Text = "Дополнительные настройки";
             this.settings.UseVisualStyleBackColor = true;
             this.settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // pictureResolution
             // 
+            this.pictureResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pictureResolution.FormattingEnabled = true;
             this.pictureResolution.Items.AddRange(new object[] {
             "513 x 513",
@@ -331,7 +334,7 @@
             this.pictureResolution.Location = new System.Drawing.Point(539, 144);
             this.pictureResolution.Name = "pictureResolution";
             this.pictureResolution.Size = new System.Drawing.Size(121, 21);
-            this.pictureResolution.TabIndex = 26;
+            this.pictureResolution.TabIndex = 4;
             this.pictureResolution.SelectedIndexChanged += new System.EventHandler(this.PictureResolution_SelectedIndexChanged);
             // 
             // label13
@@ -350,7 +353,7 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(88, 23);
             this.progressBar.Step = 1;
-            this.progressBar.TabIndex = 28;
+            this.progressBar.TabIndex = 1;
             this.progressBar.Visible = false;
             // 
             // MainForm
@@ -386,6 +389,7 @@
             this.Controls.Add(this.save);
             this.Controls.Add(this.start);
             this.Controls.Add(this.picture);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(728, 576);
             this.MinimizeBox = false;

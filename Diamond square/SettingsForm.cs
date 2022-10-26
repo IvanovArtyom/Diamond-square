@@ -12,9 +12,7 @@ namespace Diamond_square
         {
             InitializeComponent();
 
-            arrOfColors = new Color[] { oceanStartColor.BackColor, oceanEndColor.BackColor, seaStartColor.BackColor,
-                seaEndColor.BackColor, landStartColor.BackColor, landEndColor.BackColor, mountainStartColor.BackColor,
-                mountainEndColor.BackColor, snowStartColor.BackColor, snowEndColor.BackColor };
+            FillArrOfColors();
         }
 
         public Color[] Colors
@@ -177,10 +175,15 @@ namespace Diamond_square
 
             snowEndColor.BackColor = Color.FromArgb(255, 250, 250);
 
-            arrOfColors = new Color[] { Color.FromArgb(0, 0, 0), Color.FromArgb(0, 49, 102), Color.FromArgb(0, 49, 102),
-                Color.FromArgb(66, 170, 250), Color.FromArgb(107, 219, 107), Color.FromArgb(14, 59, 14),
-                Color.FromArgb(255, 218, 158), Color.FromArgb(5, 3, 0),
-                Color.FromArgb(5, 3, 0), Color.FromArgb(255, 250, 250) };
+            FillArrOfColors();
+        }
+
+        private void FillArrOfColors()
+        {
+            arrOfColors = new Color[] { oceanStartColor.BackColor, oceanEndColor.BackColor,
+                seaStartColor.BackColor, seaEndColor.BackColor, landStartColor.BackColor,
+                landEndColor.BackColor, mountainStartColor.BackColor, mountainEndColor.BackColor,
+                snowStartColor.BackColor, snowEndColor.BackColor };
         }
 
         private void OceanStartColor_MouseEnter(object sender, EventArgs e)

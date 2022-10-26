@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -140,7 +141,7 @@
             this.defaultSettings.Location = new System.Drawing.Point(12, 370);
             this.defaultSettings.Name = "defaultSettings";
             this.defaultSettings.Size = new System.Drawing.Size(147, 29);
-            this.defaultSettings.TabIndex = 11;
+            this.defaultSettings.TabIndex = 1;
             this.defaultSettings.Text = "Настройки по умолчанию";
             this.defaultSettings.UseVisualStyleBackColor = true;
             this.defaultSettings.Click += new System.EventHandler(this.DefaultSettings_Click);
@@ -190,7 +191,7 @@
             0});
             this.numUpDownMaxHeight.Name = "numUpDownMaxHeight";
             this.numUpDownMaxHeight.Size = new System.Drawing.Size(60, 20);
-            this.numUpDownMaxHeight.TabIndex = 9;
+            this.numUpDownMaxHeight.TabIndex = 6;
             this.numUpDownMaxHeight.Value = global::Diamond_square.Properties.Settings.Default.MaxHeight;
             this.numUpDownMaxHeight.ValueChanged += new System.EventHandler(this.NumUpDownMaxHeight_ValueChanged);
             // 
@@ -210,7 +211,7 @@
             -2147483648});
             this.numUpDownMaxDepth.Name = "numUpDownMaxDepth";
             this.numUpDownMaxDepth.Size = new System.Drawing.Size(60, 20);
-            this.numUpDownMaxDepth.TabIndex = 5;
+            this.numUpDownMaxDepth.TabIndex = 2;
             this.numUpDownMaxDepth.Value = global::Diamond_square.Properties.Settings.Default.MaxDepth;
             this.numUpDownMaxDepth.ValueChanged += new System.EventHandler(this.NumUpDownMaxDepth_ValueChanged);
             // 
@@ -230,7 +231,7 @@
             0});
             this.numUpDownSnowLineHeight.Name = "numUpDownSnowLineHeight";
             this.numUpDownSnowLineHeight.Size = new System.Drawing.Size(60, 20);
-            this.numUpDownSnowLineHeight.TabIndex = 8;
+            this.numUpDownSnowLineHeight.TabIndex = 5;
             this.numUpDownSnowLineHeight.Value = global::Diamond_square.Properties.Settings.Default.SnowLineHeight;
             this.numUpDownSnowLineHeight.ValueChanged += new System.EventHandler(this.NumUpDownSnowLineHeight_ValueChanged);
             // 
@@ -250,7 +251,7 @@
             -2147483648});
             this.numUpDownMinOceanDepth.Name = "numUpDownMinOceanDepth";
             this.numUpDownMinOceanDepth.Size = new System.Drawing.Size(60, 20);
-            this.numUpDownMinOceanDepth.TabIndex = 6;
+            this.numUpDownMinOceanDepth.TabIndex = 3;
             this.numUpDownMinOceanDepth.Value = global::Diamond_square.Properties.Settings.Default.MinOceanDepth;
             this.numUpDownMinOceanDepth.ValueChanged += new System.EventHandler(this.NumUpDownMinOceanDepth_ValueChanged);
             // 
@@ -270,7 +271,7 @@
             0});
             this.numUpDownMinMountainHeight.Name = "numUpDownMinMountainHeight";
             this.numUpDownMinMountainHeight.Size = new System.Drawing.Size(60, 20);
-            this.numUpDownMinMountainHeight.TabIndex = 7;
+            this.numUpDownMinMountainHeight.TabIndex = 4;
             this.numUpDownMinMountainHeight.Value = global::Diamond_square.Properties.Settings.Default.MinMountainHeight;
             this.numUpDownMinMountainHeight.ValueChanged += new System.EventHandler(this.NumUpDownMinMountainHeight_ValueChanged);
             // 
@@ -433,6 +434,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.defaultSettings);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(750, 450);
             this.MinimizeBox = false;

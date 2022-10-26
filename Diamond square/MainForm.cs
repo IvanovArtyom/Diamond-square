@@ -60,6 +60,8 @@ namespace Diamond_square
             Graphics.FromImage(bmp).Clear(Color.White);
 
             FillPicture();
+
+            start.Focus();
         }
 
         private int Rand() => rnd.Next(-1, 1) == 0 ? 1 : -1;
@@ -91,9 +93,7 @@ namespace Diamond_square
 
             await task;
 
-            save.Enabled = true;
-
-            clear.Enabled = true;
+            picture.Enabled = save.Enabled = clear.Enabled = true;
 
             save.Focus();
         }
@@ -271,7 +271,7 @@ namespace Diamond_square
             start.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = p3Bar.Enabled = 
                 p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = true;
 
-            clear.Enabled = save.Enabled = false;
+            clear.Enabled = save.Enabled = picture.Enabled = false;
 
             progressBar.Value = 0;
 
@@ -337,8 +337,6 @@ namespace Diamond_square
 
         private void PictureResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
-            start.Focus();
-
             string[] splitComponents = pictureResolution.SelectedItem.ToString().Split();
 
             imageSize = int.Parse(splitComponents[0]) - 1;
