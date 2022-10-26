@@ -347,5 +347,23 @@ namespace Diamond_square
 
             progressBar.Maximum = (int)((imageSize + 1) * (imageSize + 1) * 1.67);
         }
+
+        private void Picture_Click(object sender, EventArgs e)
+        {
+            string imagePath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + ".jpg";
+
+            try
+            {
+                picture.Image.Save(imagePath);
+
+                System.Diagnostics.Process.Start(imagePath);
+            }
+
+            catch
+            {
+                MessageBox.Show("Не удалось открыть изображение.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
