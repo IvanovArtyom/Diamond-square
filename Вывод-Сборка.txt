@@ -1,0 +1,4 @@
+﻿Сборка начата…
+1>------ Сборка начата: проект: Diamond square, Конфигурация: Debug Any CPU ------
+1>  Diamond square -> S:\Visual Studio 2019\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.exe
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 0, пропущено: 0 ==========

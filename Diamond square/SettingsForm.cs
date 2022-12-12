@@ -235,5 +235,34 @@ namespace Diamond_square
         {
             prompt.Show("Цвет самой высокой точки горы", snowEndColor);
         }
+
+        public void Helper(string title)
+        {
+            try
+            {
+                Help.ShowHelp(this, "Add data\\Руководство пользователя.chm", title + ".htm");
+            }
+
+            catch
+            {
+                MessageBox.Show("Не удалось открыть руководство пользователя.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ExtremePointSetting_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Helper("Extreme point setting");
+        }
+
+        private void PaletteSetting_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Helper("Palette setting");
+        }
+
+        private void DefaultSettings_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Helper("Default settings");
+        }
     }
 }

@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelMaxDepth = new System.Windows.Forms.Label();
+            this.labelMinOceanDepth = new System.Windows.Forms.Label();
+            this.labelMinMountainHeight = new System.Windows.Forms.Label();
+            this.labelSnowLineHeight = new System.Windows.Forms.Label();
+            this.labelMaxHeight = new System.Windows.Forms.Label();
+            this.labelExtremePointSetting = new System.Windows.Forms.Label();
             this.defaultSettings = new System.Windows.Forms.Button();
             this.colorInstaller = new System.Windows.Forms.ColorDialog();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPaletteSetting = new System.Windows.Forms.Label();
+            this.panelExtremePointSetting = new System.Windows.Forms.Panel();
             this.numUpDownMaxHeight = new System.Windows.Forms.NumericUpDown();
             this.numUpDownMaxDepth = new System.Windows.Forms.NumericUpDown();
             this.numUpDownSnowLineHeight = new System.Windows.Forms.NumericUpDown();
             this.numUpDownMinOceanDepth = new System.Windows.Forms.NumericUpDown();
             this.numUpDownMinMountainHeight = new System.Windows.Forms.NumericUpDown();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelPaletteSetting = new System.Windows.Forms.Panel();
             this.snowStartColor = new System.Windows.Forms.PictureBox();
             this.snowEndColor = new System.Windows.Forms.PictureBox();
             this.mountainStartColor = new System.Windows.Forms.PictureBox();
@@ -57,13 +57,13 @@
             this.oceanStartColor = new System.Windows.Forms.PictureBox();
             this.oceanEndColor = new System.Windows.Forms.PictureBox();
             this.prompt = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1.SuspendLayout();
+            this.panelExtremePointSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownSnowLineHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinOceanDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinMountainHeight)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelPaletteSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.snowStartColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.snowEndColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mountainStartColor)).BeginInit();
@@ -76,65 +76,66 @@
             ((System.ComponentModel.ISupportInitialize)(this.oceanEndColor)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelMaxDepth
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(33, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Максимальная глубина (м):";
+            this.labelMaxDepth.AutoSize = true;
+            this.labelMaxDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMaxDepth.Location = new System.Drawing.Point(33, 36);
+            this.labelMaxDepth.Name = "labelMaxDepth";
+            this.labelMaxDepth.Size = new System.Drawing.Size(208, 16);
+            this.labelMaxDepth.TabIndex = 0;
+            this.labelMaxDepth.Text = "Максимальная глубина (м):";
             // 
-            // label2
+            // labelMinOceanDepth
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(33, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Минимальная глубина океанов (м):";
+            this.labelMinOceanDepth.AutoSize = true;
+            this.labelMinOceanDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMinOceanDepth.Location = new System.Drawing.Point(33, 92);
+            this.labelMinOceanDepth.Name = "labelMinOceanDepth";
+            this.labelMinOceanDepth.Size = new System.Drawing.Size(267, 16);
+            this.labelMinOceanDepth.TabIndex = 1;
+            this.labelMinOceanDepth.Text = "Минимальная глубина океанов (м):";
             // 
-            // label3
+            // labelMinMountainHeight
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(33, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Минимальная высота гор (м):";
+            this.labelMinMountainHeight.AutoSize = true;
+            this.labelMinMountainHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMinMountainHeight.Location = new System.Drawing.Point(33, 148);
+            this.labelMinMountainHeight.Name = "labelMinMountainHeight";
+            this.labelMinMountainHeight.Size = new System.Drawing.Size(222, 16);
+            this.labelMinMountainHeight.TabIndex = 2;
+            this.labelMinMountainHeight.Text = "Минимальная высота гор (м):";
             // 
-            // label4
+            // labelSnowLineHeight
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(33, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Высота снеговой линии (м):";
+            this.labelSnowLineHeight.AutoSize = true;
+            this.labelSnowLineHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSnowLineHeight.Location = new System.Drawing.Point(33, 204);
+            this.labelSnowLineHeight.Name = "labelSnowLineHeight";
+            this.labelSnowLineHeight.Size = new System.Drawing.Size(211, 16);
+            this.labelSnowLineHeight.TabIndex = 3;
+            this.labelSnowLineHeight.Text = "Высота снеговой линии (м):";
             // 
-            // label5
+            // labelMaxHeight
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(33, 260);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Максимальная высота (м):";
+            this.labelMaxHeight.AutoSize = true;
+            this.labelMaxHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMaxHeight.Location = new System.Drawing.Point(33, 260);
+            this.labelMaxHeight.Name = "labelMaxHeight";
+            this.labelMaxHeight.Size = new System.Drawing.Size(200, 16);
+            this.labelMaxHeight.TabIndex = 4;
+            this.labelMaxHeight.Text = "Максимальная высота (м):";
             // 
-            // label6
+            // labelExtremePointSetting
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(65, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(290, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Настройка экстремальных точек";
+            this.labelExtremePointSetting.AutoSize = true;
+            this.labelExtremePointSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelExtremePointSetting.Location = new System.Drawing.Point(65, 9);
+            this.labelExtremePointSetting.Name = "labelExtremePointSetting";
+            this.labelExtremePointSetting.Size = new System.Drawing.Size(290, 20);
+            this.labelExtremePointSetting.TabIndex = 10;
+            this.labelExtremePointSetting.Text = "Настройка экстремальных точек";
+            this.labelExtremePointSetting.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.ExtremePointSetting_HelpRequested);
             // 
             // defaultSettings
             // 
@@ -145,35 +146,38 @@
             this.defaultSettings.Text = "Настройки по умолчанию";
             this.defaultSettings.UseVisualStyleBackColor = true;
             this.defaultSettings.Click += new System.EventHandler(this.DefaultSettings_Click);
+            this.defaultSettings.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.DefaultSettings_HelpRequested);
             // 
-            // label7
+            // labelPaletteSetting
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(491, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(178, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Настройка палитры";
+            this.labelPaletteSetting.AutoSize = true;
+            this.labelPaletteSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPaletteSetting.Location = new System.Drawing.Point(491, 9);
+            this.labelPaletteSetting.Name = "labelPaletteSetting";
+            this.labelPaletteSetting.Size = new System.Drawing.Size(178, 20);
+            this.labelPaletteSetting.TabIndex = 14;
+            this.labelPaletteSetting.Text = "Настройка палитры";
+            this.labelPaletteSetting.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PaletteSetting_HelpRequested);
             // 
-            // panel1
+            // panelExtremePointSetting
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.numUpDownMaxHeight);
-            this.panel1.Controls.Add(this.numUpDownMaxDepth);
-            this.panel1.Controls.Add(this.numUpDownSnowLineHeight);
-            this.panel1.Controls.Add(this.numUpDownMinOceanDepth);
-            this.panel1.Controls.Add(this.numUpDownMinMountainHeight);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 317);
-            this.panel1.TabIndex = 15;
+            this.panelExtremePointSetting.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelExtremePointSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelExtremePointSetting.Controls.Add(this.labelMinOceanDepth);
+            this.panelExtremePointSetting.Controls.Add(this.labelMaxDepth);
+            this.panelExtremePointSetting.Controls.Add(this.labelMinMountainHeight);
+            this.panelExtremePointSetting.Controls.Add(this.labelSnowLineHeight);
+            this.panelExtremePointSetting.Controls.Add(this.labelMaxHeight);
+            this.panelExtremePointSetting.Controls.Add(this.numUpDownMaxHeight);
+            this.panelExtremePointSetting.Controls.Add(this.numUpDownMaxDepth);
+            this.panelExtremePointSetting.Controls.Add(this.numUpDownSnowLineHeight);
+            this.panelExtremePointSetting.Controls.Add(this.numUpDownMinOceanDepth);
+            this.panelExtremePointSetting.Controls.Add(this.numUpDownMinMountainHeight);
+            this.panelExtremePointSetting.Location = new System.Drawing.Point(12, 41);
+            this.panelExtremePointSetting.Name = "panelExtremePointSetting";
+            this.panelExtremePointSetting.Size = new System.Drawing.Size(420, 317);
+            this.panelExtremePointSetting.TabIndex = 15;
+            this.panelExtremePointSetting.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.ExtremePointSetting_HelpRequested);
             // 
             // numUpDownMaxHeight
             // 
@@ -275,24 +279,25 @@
             this.numUpDownMinMountainHeight.Value = global::Diamond_square.Properties.Settings.Default.MinMountainHeight;
             this.numUpDownMinMountainHeight.ValueChanged += new System.EventHandler(this.NumUpDownMinMountainHeight_ValueChanged);
             // 
-            // panel2
+            // panelPaletteSetting
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.snowStartColor);
-            this.panel2.Controls.Add(this.snowEndColor);
-            this.panel2.Controls.Add(this.mountainStartColor);
-            this.panel2.Controls.Add(this.mountainEndColor);
-            this.panel2.Controls.Add(this.landStartColor);
-            this.panel2.Controls.Add(this.landEndColor);
-            this.panel2.Controls.Add(this.seaStartColor);
-            this.panel2.Controls.Add(this.seaEndColor);
-            this.panel2.Controls.Add(this.oceanStartColor);
-            this.panel2.Controls.Add(this.oceanEndColor);
-            this.panel2.Location = new System.Drawing.Point(443, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 359);
-            this.panel2.TabIndex = 16;
+            this.panelPaletteSetting.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelPaletteSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPaletteSetting.Controls.Add(this.snowStartColor);
+            this.panelPaletteSetting.Controls.Add(this.snowEndColor);
+            this.panelPaletteSetting.Controls.Add(this.mountainStartColor);
+            this.panelPaletteSetting.Controls.Add(this.mountainEndColor);
+            this.panelPaletteSetting.Controls.Add(this.landStartColor);
+            this.panelPaletteSetting.Controls.Add(this.landEndColor);
+            this.panelPaletteSetting.Controls.Add(this.seaStartColor);
+            this.panelPaletteSetting.Controls.Add(this.seaEndColor);
+            this.panelPaletteSetting.Controls.Add(this.oceanStartColor);
+            this.panelPaletteSetting.Controls.Add(this.oceanEndColor);
+            this.panelPaletteSetting.Location = new System.Drawing.Point(443, 40);
+            this.panelPaletteSetting.Name = "panelPaletteSetting";
+            this.panelPaletteSetting.Size = new System.Drawing.Size(279, 359);
+            this.panelPaletteSetting.TabIndex = 16;
+            this.panelPaletteSetting.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PaletteSetting_HelpRequested);
             // 
             // snowStartColor
             // 
@@ -429,12 +434,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 411);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelPaletteSetting);
+            this.Controls.Add(this.panelPaletteSetting);
+            this.Controls.Add(this.panelExtremePointSetting);
+            this.Controls.Add(this.labelExtremePointSetting);
             this.Controls.Add(this.defaultSettings);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(750, 450);
@@ -443,14 +449,14 @@
             this.Name = "SettingsForm";
             this.Text = "Дополнительные настройки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelExtremePointSetting.ResumeLayout(false);
+            this.panelExtremePointSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMaxDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownSnowLineHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinOceanDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMinMountainHeight)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelPaletteSetting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.snowStartColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.snowEndColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mountainStartColor)).EndInit();
@@ -468,24 +474,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelMaxDepth;
+        private System.Windows.Forms.Label labelMinOceanDepth;
+        private System.Windows.Forms.Label labelMinMountainHeight;
+        private System.Windows.Forms.Label labelSnowLineHeight;
+        private System.Windows.Forms.Label labelMaxHeight;
         private System.Windows.Forms.NumericUpDown numUpDownMaxDepth;
         private System.Windows.Forms.NumericUpDown numUpDownMinOceanDepth;
         private System.Windows.Forms.NumericUpDown numUpDownMinMountainHeight;
         private System.Windows.Forms.NumericUpDown numUpDownSnowLineHeight;
         private System.Windows.Forms.NumericUpDown numUpDownMaxHeight;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelExtremePointSetting;
         private System.Windows.Forms.Button defaultSettings;
         private System.Windows.Forms.ColorDialog colorInstaller;
         private System.Windows.Forms.PictureBox oceanStartColor;
         private System.Windows.Forms.PictureBox oceanEndColor;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label labelPaletteSetting;
+        private System.Windows.Forms.Panel panelExtremePointSetting;
+        private System.Windows.Forms.Panel panelPaletteSetting;
         private System.Windows.Forms.PictureBox seaEndColor;
         private System.Windows.Forms.PictureBox snowStartColor;
         private System.Windows.Forms.PictureBox snowEndColor;

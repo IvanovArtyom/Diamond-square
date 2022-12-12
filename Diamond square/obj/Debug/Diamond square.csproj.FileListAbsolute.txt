@@ -19,3 +19,16 @@ S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond s
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.mainForm.resources
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.settingsForm.resources
 S:\Visual Studio 2019\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.AssemblyReference.cache
+S:\Visual Studio 2019\Projects\Diamond square\Diamond square\bin\Debug\Руководство пользователя.docx
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.exe.config
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.exe
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\bin\Debug\Diamond square.pdb
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.AssemblyReference.cache
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.SuggestedBindingRedirects.cache
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.MainForm.resources
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.Properties.Resources.resources
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond_square.SettingsForm.resources
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.GenerateResource.cache
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.csproj.CoreCompileInputs.cache
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.exe
+D:\Programs\Microsoft Visual Studio\Projects\Diamond square\Diamond square\obj\Debug\Diamond square.pdb

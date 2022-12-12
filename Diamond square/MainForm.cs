@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Diamond_square
 {
@@ -70,16 +70,16 @@ namespace Diamond_square
         {
             progressBar.Visible = true;
 
-            start.Enabled = save.Enabled = clear.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = 
-                p3Bar.Enabled = p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = false; 
+            start.Enabled = save.Enabled = clear.Enabled = rBar.Enabled = trackBarP1.Enabled = trackBarP2.Enabled = 
+                trackBarP3.Enabled = trackBarP4.Enabled = additionalSettings.Enabled = pictureResolution.Enabled = false; 
 
-            arrOfHeights[0, 0] = p1Bar.Value;
+            arrOfHeights[0, 0] = trackBarP1.Value;
 
-            arrOfHeights[imageSize, 0] = p2Bar.Value;
+            arrOfHeights[imageSize, 0] = trackBarP2.Value;
 
-            arrOfHeights[imageSize, imageSize] = p3Bar.Value;
+            arrOfHeights[imageSize, imageSize] = trackBarP3.Value;
 
-            arrOfHeights[0, imageSize] = p4Bar.Value;
+            arrOfHeights[0, imageSize] = trackBarP4.Value;
 
             Draw(new Point(0, imageSize)); 
             
@@ -268,8 +268,8 @@ namespace Diamond_square
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            start.Enabled = rBar.Enabled = p1Bar.Enabled = p2Bar.Enabled = p3Bar.Enabled = 
-                p4Bar.Enabled = settings.Enabled = pictureResolution.Enabled = true;
+            start.Enabled = rBar.Enabled = trackBarP1.Enabled = trackBarP2.Enabled = trackBarP3.Enabled = 
+                trackBarP4.Enabled = additionalSettings.Enabled = pictureResolution.Enabled = true;
 
             clear.Enabled = save.Enabled = picture.Enabled = false;
 
@@ -296,18 +296,18 @@ namespace Diamond_square
 
         private void ChangeTexts()
         {
-            label1.Text = p1Bar.Value.ToString();
+            labelHeight1.Text = trackBarP1.Value.ToString();
 
-            label2.Text = p2Bar.Value.ToString();
+            labelHeight2.Text = trackBarP2.Value.ToString();
 
-            label3.Text = p3Bar.Value.ToString();
+            labelHeight3.Text = trackBarP3.Value.ToString();
 
-            label4.Text = p4Bar.Value.ToString();
+            labelHeight4.Text = trackBarP4.Value.ToString();
         }
 
         private void Exit_Click(object sender, EventArgs e) => Close();
 
-        private void Settings_Click(object sender, EventArgs e)
+        private void AdditionalSettings_Click(object sender, EventArgs e)
         {
             settingsForm.ShowDialog();
 
@@ -328,15 +328,17 @@ namespace Diamond_square
 
             maxHeight = settingsForm.MaxHeight;
 
-            p1Bar.Maximum = p2Bar.Maximum = p3Bar.Maximum = p4Bar.Maximum = maxHeight;
+            trackBarP1.Maximum = trackBarP2.Maximum = trackBarP3.Maximum = trackBarP4.Maximum = maxHeight;
 
-            p1Bar.Minimum = p2Bar.Minimum = p3Bar.Minimum = p4Bar.Minimum = maxDepth;
+            trackBarP1.Minimum = trackBarP2.Minimum = trackBarP3.Minimum = trackBarP4.Minimum = maxDepth;
 
             ChangeTexts();
         }
 
         private void PictureResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
+            const double REPET_COEFFICIENT = 1.67;
+
             string[] splitComponents = pictureResolution.SelectedItem.ToString().Split();
 
             imageSize = int.Parse(splitComponents[0]) - 1;
@@ -345,12 +347,12 @@ namespace Diamond_square
 
             arrOfHeights = new int[imageSize + 1, imageSize + 1];
 
-            progressBar.Maximum = (int)((imageSize + 1) * (imageSize + 1) * 1.67);
+            progressBar.Maximum = (int)((imageSize + 1) * (imageSize + 1) * REPET_COEFFICIENT);
         }
 
         private void Picture_Click(object sender, EventArgs e)
         {
-            string imagePath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + ".jpg";
+            string imagePath = "Image.jpg";
 
             try
             {
@@ -364,6 +366,51 @@ namespace Diamond_square
                 MessageBox.Show("Не удалось открыть изображение.", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Start_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Start");
+        }
+
+        private void Picture_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Picture");
+        }
+
+        private void Save_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Save");
+        }
+
+        private void Clear_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Clear");
+        }
+
+        private void Resolution_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Resolution");
+        }
+
+        private void Roughness_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Roughness");
+        }
+
+        private void CornerHeights_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Corner heights");
+        }
+
+        private void AdditionalSettings_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Additional settings");
+        }
+
+        private void Exit_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            settingsForm.Helper("Exit");
         }
     }
 }

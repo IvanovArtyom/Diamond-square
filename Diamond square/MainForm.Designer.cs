@@ -36,39 +36,40 @@
             this.exit = new System.Windows.Forms.Button();
             this.rBar = new System.Windows.Forms.TrackBar();
             this.labelR = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.p1Bar = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.p2Bar = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.p3Bar = new System.Windows.Forms.TrackBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.p4Bar = new System.Windows.Forms.TrackBar();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.settings = new System.Windows.Forms.Button();
+            this.labelRoughness = new System.Windows.Forms.Label();
+            this.trackBarP1 = new System.Windows.Forms.TrackBar();
+            this.labelHeight1 = new System.Windows.Forms.Label();
+            this.labelHeight2 = new System.Windows.Forms.Label();
+            this.trackBarP2 = new System.Windows.Forms.TrackBar();
+            this.labelHeight3 = new System.Windows.Forms.Label();
+            this.trackBarP3 = new System.Windows.Forms.TrackBar();
+            this.labelHeight4 = new System.Windows.Forms.Label();
+            this.trackBarP4 = new System.Windows.Forms.TrackBar();
+            this.labelCornerHeight2 = new System.Windows.Forms.Label();
+            this.labelCornerHeight3 = new System.Windows.Forms.Label();
+            this.labelCornerHeight4 = new System.Windows.Forms.Label();
+            this.labelCornerHeight1 = new System.Windows.Forms.Label();
+            this.labelCorner1 = new System.Windows.Forms.Label();
+            this.labelCorner2 = new System.Windows.Forms.Label();
+            this.labelCorner3 = new System.Windows.Forms.Label();
+            this.labelCorner4 = new System.Windows.Forms.Label();
+            this.additionalSettings = new System.Windows.Forms.Button();
             this.pictureResolution = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelResolution = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxRoughness = new System.Windows.Forms.GroupBox();
+            this.groupBoxResolution = new System.Windows.Forms.GroupBox();
+            this.groupBoxCornerHeights = new System.Windows.Forms.GroupBox();
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2Bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3Bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4Bar)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP4)).BeginInit();
+            this.groupBoxRoughness.SuspendLayout();
+            this.groupBoxResolution.SuspendLayout();
+            this.groupBoxCornerHeights.SuspendLayout();
             this.SuspendLayout();
             // 
             // picture
@@ -81,6 +82,7 @@
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             this.picture.Click += new System.EventHandler(this.Picture_Click);
+            this.picture.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Picture_HelpRequested);
             // 
             // start
             // 
@@ -91,6 +93,7 @@
             this.start.Text = "Старт";
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.Start_Click);
+            this.start.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Start_HelpRequested);
             // 
             // save
             // 
@@ -102,6 +105,7 @@
             this.save.Text = "Сохранить";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.Save_Click);
+            this.save.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Save_HelpRequested);
             // 
             // clear
             // 
@@ -113,6 +117,7 @@
             this.clear.Text = "Очистка";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.Clear_Click);
+            this.clear.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Clear_HelpRequested);
             // 
             // exit
             // 
@@ -123,6 +128,7 @@
             this.exit.Text = "Выход";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.Exit_Click);
+            this.exit.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Exit_HelpRequested);
             // 
             // rBar
             // 
@@ -145,189 +151,194 @@
             this.labelR.TabIndex = 6;
             this.labelR.Text = "R = 1";
             // 
-            // label
+            // labelRoughness
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label.Location = new System.Drawing.Point(6, 16);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(98, 13);
-            this.label.TabIndex = 7;
-            this.label.Text = "Шероховатость";
+            this.labelRoughness.AutoSize = true;
+            this.labelRoughness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRoughness.Location = new System.Drawing.Point(6, 16);
+            this.labelRoughness.Name = "labelRoughness";
+            this.labelRoughness.Size = new System.Drawing.Size(98, 13);
+            this.labelRoughness.TabIndex = 7;
+            this.labelRoughness.Text = "Шероховатость";
             // 
-            // p1Bar
+            // trackBarP1
             // 
-            this.p1Bar.LargeChange = 100;
-            this.p1Bar.Location = new System.Drawing.Point(9, 31);
-            this.p1Bar.Name = "p1Bar";
-            this.p1Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p1Bar.Size = new System.Drawing.Size(45, 147);
-            this.p1Bar.TabIndex = 6;
-            this.p1Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p1Bar.Scroll += new System.EventHandler(this.Scroller);
+            this.trackBarP1.LargeChange = 100;
+            this.trackBarP1.Location = new System.Drawing.Point(9, 31);
+            this.trackBarP1.Name = "trackBarP1";
+            this.trackBarP1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarP1.Size = new System.Drawing.Size(45, 147);
+            this.trackBarP1.TabIndex = 6;
+            this.trackBarP1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarP1.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // label1
+            // labelHeight1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(2, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "0";
+            this.labelHeight1.AutoSize = true;
+            this.labelHeight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeight1.Location = new System.Drawing.Point(2, 176);
+            this.labelHeight1.Name = "labelHeight1";
+            this.labelHeight1.Size = new System.Drawing.Size(14, 13);
+            this.labelHeight1.TabIndex = 9;
+            this.labelHeight1.Text = "0";
             // 
-            // label2
+            // labelHeight2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(48, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "0";
+            this.labelHeight2.AutoSize = true;
+            this.labelHeight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeight2.Location = new System.Drawing.Point(48, 176);
+            this.labelHeight2.Name = "labelHeight2";
+            this.labelHeight2.Size = new System.Drawing.Size(14, 13);
+            this.labelHeight2.TabIndex = 11;
+            this.labelHeight2.Text = "0";
             // 
-            // p2Bar
+            // trackBarP2
             // 
-            this.p2Bar.LargeChange = 100;
-            this.p2Bar.Location = new System.Drawing.Point(55, 31);
-            this.p2Bar.Name = "p2Bar";
-            this.p2Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p2Bar.Size = new System.Drawing.Size(45, 147);
-            this.p2Bar.TabIndex = 7;
-            this.p2Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p2Bar.Scroll += new System.EventHandler(this.Scroller);
+            this.trackBarP2.LargeChange = 100;
+            this.trackBarP2.Location = new System.Drawing.Point(55, 31);
+            this.trackBarP2.Name = "trackBarP2";
+            this.trackBarP2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarP2.Size = new System.Drawing.Size(45, 147);
+            this.trackBarP2.TabIndex = 7;
+            this.trackBarP2.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarP2.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // label3
+            // labelHeight3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(94, 176);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "0";
+            this.labelHeight3.AutoSize = true;
+            this.labelHeight3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeight3.Location = new System.Drawing.Point(94, 176);
+            this.labelHeight3.Name = "labelHeight3";
+            this.labelHeight3.Size = new System.Drawing.Size(14, 13);
+            this.labelHeight3.TabIndex = 13;
+            this.labelHeight3.Text = "0";
             // 
-            // p3Bar
+            // trackBarP3
             // 
-            this.p3Bar.LargeChange = 100;
-            this.p3Bar.Location = new System.Drawing.Point(101, 31);
-            this.p3Bar.Name = "p3Bar";
-            this.p3Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p3Bar.Size = new System.Drawing.Size(45, 147);
-            this.p3Bar.TabIndex = 8;
-            this.p3Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p3Bar.Scroll += new System.EventHandler(this.Scroller);
+            this.trackBarP3.LargeChange = 100;
+            this.trackBarP3.Location = new System.Drawing.Point(101, 31);
+            this.trackBarP3.Name = "trackBarP3";
+            this.trackBarP3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarP3.Size = new System.Drawing.Size(45, 147);
+            this.trackBarP3.TabIndex = 8;
+            this.trackBarP3.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarP3.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // label4
+            // labelHeight4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(140, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "0";
+            this.labelHeight4.AutoSize = true;
+            this.labelHeight4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeight4.Location = new System.Drawing.Point(140, 176);
+            this.labelHeight4.Name = "labelHeight4";
+            this.labelHeight4.Size = new System.Drawing.Size(14, 13);
+            this.labelHeight4.TabIndex = 15;
+            this.labelHeight4.Text = "0";
             // 
-            // p4Bar
+            // trackBarP4
             // 
-            this.p4Bar.LargeChange = 100;
-            this.p4Bar.Location = new System.Drawing.Point(147, 31);
-            this.p4Bar.Name = "p4Bar";
-            this.p4Bar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.p4Bar.Size = new System.Drawing.Size(45, 147);
-            this.p4Bar.TabIndex = 9;
-            this.p4Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.p4Bar.Scroll += new System.EventHandler(this.Scroller);
+            this.trackBarP4.LargeChange = 100;
+            this.trackBarP4.Location = new System.Drawing.Point(147, 31);
+            this.trackBarP4.Name = "trackBarP4";
+            this.trackBarP4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarP4.Size = new System.Drawing.Size(45, 147);
+            this.trackBarP4.TabIndex = 9;
+            this.trackBarP4.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarP4.Scroll += new System.EventHandler(this.Scroller);
             // 
-            // label6
+            // labelCornerHeight2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(525, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(11, 12);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "2";
+            this.labelCornerHeight2.AutoSize = true;
+            this.labelCornerHeight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCornerHeight2.Location = new System.Drawing.Point(525, 0);
+            this.labelCornerHeight2.Name = "labelCornerHeight2";
+            this.labelCornerHeight2.Size = new System.Drawing.Size(11, 12);
+            this.labelCornerHeight2.TabIndex = 17;
+            this.labelCornerHeight2.Text = "2";
+            this.labelCornerHeight2.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CornerHeights_HelpRequested);
             // 
-            // label7
+            // labelCornerHeight3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(525, 525);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 12);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "3";
+            this.labelCornerHeight3.AutoSize = true;
+            this.labelCornerHeight3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCornerHeight3.Location = new System.Drawing.Point(525, 525);
+            this.labelCornerHeight3.Name = "labelCornerHeight3";
+            this.labelCornerHeight3.Size = new System.Drawing.Size(11, 12);
+            this.labelCornerHeight3.TabIndex = 18;
+            this.labelCornerHeight3.Text = "3";
+            this.labelCornerHeight3.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CornerHeights_HelpRequested);
             // 
-            // label8
+            // labelCornerHeight4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(0, 525);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(11, 12);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "4";
+            this.labelCornerHeight4.AutoSize = true;
+            this.labelCornerHeight4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCornerHeight4.Location = new System.Drawing.Point(0, 525);
+            this.labelCornerHeight4.Name = "labelCornerHeight4";
+            this.labelCornerHeight4.Size = new System.Drawing.Size(11, 12);
+            this.labelCornerHeight4.TabIndex = 19;
+            this.labelCornerHeight4.Text = "4";
+            this.labelCornerHeight4.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CornerHeights_HelpRequested);
             // 
-            // label5
+            // labelCornerHeight1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 12);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "1";
+            this.labelCornerHeight1.AutoSize = true;
+            this.labelCornerHeight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCornerHeight1.Location = new System.Drawing.Point(0, 0);
+            this.labelCornerHeight1.Name = "labelCornerHeight1";
+            this.labelCornerHeight1.Size = new System.Drawing.Size(11, 12);
+            this.labelCornerHeight1.TabIndex = 20;
+            this.labelCornerHeight1.Text = "1";
+            this.labelCornerHeight1.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CornerHeights_HelpRequested);
             // 
-            // label9
+            // labelCorner1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(6, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 12);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Угол 1";
+            this.labelCorner1.AutoSize = true;
+            this.labelCorner1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCorner1.Location = new System.Drawing.Point(6, 16);
+            this.labelCorner1.Name = "labelCorner1";
+            this.labelCorner1.Size = new System.Drawing.Size(38, 12);
+            this.labelCorner1.TabIndex = 21;
+            this.labelCorner1.Text = "Угол 1";
             // 
-            // label10
+            // labelCorner2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(49, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 12);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Угол 2";
+            this.labelCorner2.AutoSize = true;
+            this.labelCorner2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCorner2.Location = new System.Drawing.Point(49, 16);
+            this.labelCorner2.Name = "labelCorner2";
+            this.labelCorner2.Size = new System.Drawing.Size(38, 12);
+            this.labelCorner2.TabIndex = 22;
+            this.labelCorner2.Text = "Угол 2";
             // 
-            // label11
+            // labelCorner3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(95, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 12);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Угол 3";
+            this.labelCorner3.AutoSize = true;
+            this.labelCorner3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCorner3.Location = new System.Drawing.Point(95, 16);
+            this.labelCorner3.Name = "labelCorner3";
+            this.labelCorner3.Size = new System.Drawing.Size(38, 12);
+            this.labelCorner3.TabIndex = 23;
+            this.labelCorner3.Text = "Угол 3";
             // 
-            // label12
+            // labelCorner4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(138, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 12);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Угол 4";
+            this.labelCorner4.AutoSize = true;
+            this.labelCorner4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCorner4.Location = new System.Drawing.Point(138, 16);
+            this.labelCorner4.Name = "labelCorner4";
+            this.labelCorner4.Size = new System.Drawing.Size(38, 12);
+            this.labelCorner4.TabIndex = 24;
+            this.labelCorner4.Text = "Угол 4";
             // 
-            // settings
+            // additionalSettings
             // 
-            this.settings.Location = new System.Drawing.Point(571, 467);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(161, 23);
-            this.settings.TabIndex = 10;
-            this.settings.Text = "Дополнительные настройки";
-            this.settings.UseVisualStyleBackColor = true;
-            this.settings.Click += new System.EventHandler(this.Settings_Click);
+            this.additionalSettings.Location = new System.Drawing.Point(571, 467);
+            this.additionalSettings.Name = "additionalSettings";
+            this.additionalSettings.Size = new System.Drawing.Size(161, 23);
+            this.additionalSettings.TabIndex = 10;
+            this.additionalSettings.Text = "Дополнительные настройки";
+            this.additionalSettings.UseVisualStyleBackColor = true;
+            this.additionalSettings.Click += new System.EventHandler(this.AdditionalSettings_Click);
+            this.additionalSettings.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AdditionalSettings_HelpRequested);
             // 
             // pictureResolution
             // 
@@ -337,95 +348,102 @@
             "513 x 513",
             "1025 x 1025",
             "2049 x 2049",
-            "4097 x 4097"});
+            "4097 x 4097",
+            "8193 x 8193"});
             this.pictureResolution.Location = new System.Drawing.Point(6, 25);
             this.pictureResolution.Name = "pictureResolution";
             this.pictureResolution.Size = new System.Drawing.Size(121, 21);
             this.pictureResolution.TabIndex = 4;
             this.pictureResolution.SelectedIndexChanged += new System.EventHandler(this.PictureResolution_SelectedIndexChanged);
             // 
-            // label13
+            // labelResolution
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(3, 9);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 13);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Разрешение";
+            this.labelResolution.AutoSize = true;
+            this.labelResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelResolution.Location = new System.Drawing.Point(3, 9);
+            this.labelResolution.Name = "labelResolution";
+            this.labelResolution.Size = new System.Drawing.Size(80, 13);
+            this.labelResolution.TabIndex = 27;
+            this.labelResolution.Text = "Разрешение";
             // 
             // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(537, 47);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(108, 23);
+            this.progressBar.Size = new System.Drawing.Size(109, 23);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 1;
             this.progressBar.Visible = false;
             // 
-            // groupBox1
+            // groupBoxRoughness
             // 
-            this.groupBox1.Controls.Add(this.label);
-            this.groupBox1.Controls.Add(this.labelR);
-            this.groupBox1.Controls.Add(this.rBar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(537, 169);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(195, 80);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
+            this.groupBoxRoughness.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxRoughness.Controls.Add(this.labelRoughness);
+            this.groupBoxRoughness.Controls.Add(this.labelR);
+            this.groupBoxRoughness.Controls.Add(this.rBar);
+            this.groupBoxRoughness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxRoughness.Location = new System.Drawing.Point(537, 169);
+            this.groupBoxRoughness.Name = "groupBoxRoughness";
+            this.groupBoxRoughness.Size = new System.Drawing.Size(195, 80);
+            this.groupBoxRoughness.TabIndex = 28;
+            this.groupBoxRoughness.TabStop = false;
+            this.groupBoxRoughness.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Roughness_HelpRequested);
             // 
-            // groupBox2
+            // groupBoxResolution
             // 
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.pictureResolution);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(537, 111);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(195, 52);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
+            this.groupBoxResolution.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxResolution.Controls.Add(this.labelResolution);
+            this.groupBoxResolution.Controls.Add(this.pictureResolution);
+            this.groupBoxResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxResolution.Location = new System.Drawing.Point(537, 111);
+            this.groupBoxResolution.Name = "groupBoxResolution";
+            this.groupBoxResolution.Size = new System.Drawing.Size(195, 52);
+            this.groupBoxResolution.TabIndex = 29;
+            this.groupBoxResolution.TabStop = false;
+            this.groupBoxResolution.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Resolution_HelpRequested);
             // 
-            // groupBox3
+            // groupBoxCornerHeights
             // 
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.p1Bar);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.p2Bar);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.p3Bar);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.p4Bar);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox3.Location = new System.Drawing.Point(537, 255);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(195, 200);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
+            this.groupBoxCornerHeights.Controls.Add(this.labelCorner2);
+            this.groupBoxCornerHeights.Controls.Add(this.trackBarP1);
+            this.groupBoxCornerHeights.Controls.Add(this.labelHeight1);
+            this.groupBoxCornerHeights.Controls.Add(this.trackBarP2);
+            this.groupBoxCornerHeights.Controls.Add(this.labelHeight2);
+            this.groupBoxCornerHeights.Controls.Add(this.labelCorner4);
+            this.groupBoxCornerHeights.Controls.Add(this.trackBarP3);
+            this.groupBoxCornerHeights.Controls.Add(this.labelCorner3);
+            this.groupBoxCornerHeights.Controls.Add(this.labelHeight3);
+            this.groupBoxCornerHeights.Controls.Add(this.trackBarP4);
+            this.groupBoxCornerHeights.Controls.Add(this.labelCorner1);
+            this.groupBoxCornerHeights.Controls.Add(this.labelHeight4);
+            this.groupBoxCornerHeights.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxCornerHeights.Location = new System.Drawing.Point(537, 255);
+            this.groupBoxCornerHeights.Name = "groupBoxCornerHeights";
+            this.groupBoxCornerHeights.Size = new System.Drawing.Size(195, 200);
+            this.groupBoxCornerHeights.TabIndex = 30;
+            this.groupBoxCornerHeights.TabStop = false;
+            this.groupBoxCornerHeights.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CornerHeights_HelpRequested);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 537);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxCornerHeights);
+            this.Controls.Add(this.groupBoxResolution);
+            this.Controls.Add(this.groupBoxRoughness);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.settings);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.additionalSettings);
+            this.Controls.Add(this.labelCornerHeight1);
+            this.Controls.Add(this.labelCornerHeight4);
+            this.Controls.Add(this.labelCornerHeight3);
+            this.Controls.Add(this.labelCornerHeight2);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.save);
             this.Controls.Add(this.start);
             this.Controls.Add(this.picture);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(760, 576);
@@ -435,16 +453,16 @@
             this.Text = "Diamond square";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1Bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2Bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3Bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4Bar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarP4)).EndInit();
+            this.groupBoxRoughness.ResumeLayout(false);
+            this.groupBoxRoughness.PerformLayout();
+            this.groupBoxResolution.ResumeLayout(false);
+            this.groupBoxResolution.PerformLayout();
+            this.groupBoxCornerHeights.ResumeLayout(false);
+            this.groupBoxCornerHeights.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,29 +477,30 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.TrackBar rBar;
         private System.Windows.Forms.Label labelR;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TrackBar p1Bar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TrackBar p2Bar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TrackBar p3Bar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TrackBar p4Bar;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button settings;
+        private System.Windows.Forms.Label labelRoughness;
+        private System.Windows.Forms.TrackBar trackBarP1;
+        private System.Windows.Forms.Label labelHeight1;
+        private System.Windows.Forms.Label labelHeight2;
+        private System.Windows.Forms.TrackBar trackBarP2;
+        private System.Windows.Forms.Label labelHeight3;
+        private System.Windows.Forms.TrackBar trackBarP3;
+        private System.Windows.Forms.Label labelHeight4;
+        private System.Windows.Forms.TrackBar trackBarP4;
+        private System.Windows.Forms.Label labelCornerHeight2;
+        private System.Windows.Forms.Label labelCornerHeight3;
+        private System.Windows.Forms.Label labelCornerHeight4;
+        private System.Windows.Forms.Label labelCornerHeight1;
+        private System.Windows.Forms.Label labelCorner1;
+        private System.Windows.Forms.Label labelCorner2;
+        private System.Windows.Forms.Label labelCorner3;
+        private System.Windows.Forms.Label labelCorner4;
+        private System.Windows.Forms.Button additionalSettings;
         private System.Windows.Forms.ComboBox pictureResolution;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelResolution;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxRoughness;
+        private System.Windows.Forms.GroupBox groupBoxResolution;
+        private System.Windows.Forms.GroupBox groupBoxCornerHeights;
+        private System.Windows.Forms.HelpProvider helpProvider;
     }
 }
