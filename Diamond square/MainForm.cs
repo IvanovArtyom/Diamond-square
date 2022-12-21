@@ -171,19 +171,37 @@ namespace Diamond_square
             bmp.SetPixel(p.X, p.Y, color);
         }
 
+        private enum Colors
+        {
+            oceanStartColor,
+            oceanEndColor,
+            seaStartColor,
+            seaEndColor,
+            landStartColor,
+            landEndColor,
+            mountainStartColor,
+            mountainEndColor,
+            snowStartColor,
+            snowEndColor
+        }
+
         private void FillColors(Color[] colors)
         {
             int i = 0;
 
-            FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth, colors[0], colors[1]);
+            FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth,
+                colors[(int)Colors.oceanStartColor], colors[(int)Colors.oceanEndColor]);
 
-            FillBiome(ref i, -maxDepth, -minOceanDepth, colors[2], colors[3]);
+            FillBiome(ref i, -maxDepth, -minOceanDepth, colors[(int)Colors.seaStartColor], colors[(int)Colors.seaEndColor]);
 
-            FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight, colors[4], colors[5]);
+            FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight,
+                colors[(int)Colors.landStartColor], colors[(int)Colors.landEndColor]);
 
-            FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight, colors[6], colors[7]);
+            FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight,
+                colors[(int)Colors.mountainStartColor], colors[(int)Colors.mountainEndColor]);
 
-            FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight, colors[8], colors[9]);
+            FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight,
+                colors[(int)Colors.snowStartColor], colors[(int)Colors.snowEndColor]);
         }
 
         private void FillBiome(ref int i, int cycleEnd, int range, Color startColor, Color endColor)
@@ -271,11 +289,9 @@ namespace Diamond_square
             start.Enabled = rBar.Enabled = trackBarP1.Enabled = trackBarP2.Enabled = trackBarP3.Enabled = 
                 trackBarP4.Enabled = additionalSettings.Enabled = pictureResolution.Enabled = true;
 
-            clear.Enabled = save.Enabled = picture.Enabled = false;
-
             progressBar.Value = 0;
 
-            progressBar.Visible = false;
+            clear.Enabled = save.Enabled = picture.Enabled = progressBar.Visible = false;
 
             Initialize();
 
