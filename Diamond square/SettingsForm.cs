@@ -241,12 +241,16 @@ namespace Diamond_square
             try
             {
                 Help.ShowHelp(this, "Add data\\Руководство пользователя.chm", title + ".htm");
-            }
+            }            
 
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не удалось открыть руководство пользователя.", "Ошибка",
+                string message = "Не удалось открыть руководство пользователя. " + ex.Message;
+
+                MessageBox.Show(message, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                _ = new LogWriter(message);
             }
         }
 

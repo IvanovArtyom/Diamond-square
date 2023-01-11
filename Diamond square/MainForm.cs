@@ -276,10 +276,14 @@ namespace Diamond_square
                     picture.Image.Save(sfd.FileName);
                 }
 
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Невозможно сохранить изображение.", "Ошибка",
+                    string message = "Не удалось сохранить изображение. " + ex.Message;
+
+                    MessageBox.Show(message, "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    _ = new LogWriter(message);
                 }
             }
         }
@@ -377,10 +381,14 @@ namespace Diamond_square
                 System.Diagnostics.Process.Start(imagePath);
             }
 
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не удалось открыть изображение.", "Ошибка",
+                string message = "Не удалось открыть изображение. " + ex.Message;
+
+                MessageBox.Show(message, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                _ = new LogWriter(message);
             }
         }
 
