@@ -15,6 +15,7 @@ namespace Diamond_square
             FillArrOfColors();
         }
 
+        // Публичные методы для передачи данных на форму "MainForm".
         public Color[] Colors
         {
             get => arrOfColors;
@@ -45,11 +46,13 @@ namespace Diamond_square
             get => (int)numUpDownMaxHeight.Value;
         }
 
+        // Сохраняет измененные настройки пользователем даже после выхода из программы.
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.Save();
         }
 
+        // Ограничители для изменений высот биом.
         private void NumUpDownMaxDepth_ValueChanged(object sender, EventArgs e)
         {
             if (MaxDepth >= MinOceanDepth)
@@ -83,6 +86,7 @@ namespace Diamond_square
                 numUpDownMaxHeight.Value = SnowLineHeight + 1;
         }
 
+        // Позволяют менять начальные и конечные цвета биом в палитре.
         private void OceanStartColor_Click(object sender, EventArgs e)
         {
             if (colorInstaller.ShowDialog() == DialogResult.OK)
@@ -143,6 +147,7 @@ namespace Diamond_square
                 snowEndColor.BackColor = arrOfColors[9] = colorInstaller.Color;
         }
 
+        // Устанавливает "заводские" настройки для программы.
         private void DefaultSettings_Click(object sender, EventArgs e)
         {
             numUpDownMaxDepth.Value = -11034;
@@ -178,6 +183,7 @@ namespace Diamond_square
             FillArrOfColors();
         }
 
+        // Создает массив, содержащий все цвета палитры, для удобной передачи данных на форму "MainForm".
         private void FillArrOfColors()
         {
             arrOfColors = new Color[] { oceanStartColor.BackColor, oceanEndColor.BackColor,
@@ -186,6 +192,7 @@ namespace Diamond_square
                 snowStartColor.BackColor, snowEndColor.BackColor };
         }
 
+        // Всплывающие подсказки при наведении на цвета в палитре.
         private void OceanStartColor_MouseEnter(object sender, EventArgs e)
         {
             prompt.Show("Цвет самой глубокой точки океана", oceanStartColor);
@@ -236,13 +243,16 @@ namespace Diamond_square
             prompt.Show("Цвет самой высокой точки горы", snowEndColor);
         }
 
+        // Метод для работы с руководством пользователя.
         public void Helper(string title)
         {
             try
             {
+                // Пытается открыть страницу из руководства пользователя по заглавию.
                 Help.ShowHelp(this, "Add data\\Руководство пользователя.chm", title + ".htm");
             }            
 
+            // При ошибке показывает соответствующее окно и делает запись в лог файл.
             catch (Exception ex)
             {
                 string message = "Не удалось открыть руководство пользователя. " + ex.Message;
@@ -254,6 +264,7 @@ namespace Diamond_square
             }
         }
 
+        // Открывают руководство пользователя на необходимой странице.
         private void ExtremePointSetting_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Helper("Extreme point setting");

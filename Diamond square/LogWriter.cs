@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace Diamond_square
 {
+    // Класс для создания записей в лог файл.
     internal class LogWriter
     {
         public LogWriter(string logMessage)

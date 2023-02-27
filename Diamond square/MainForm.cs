@@ -44,6 +44,7 @@ namespace Diamond_square
             ClearPicture();
         }
 
+        // Инициализирует частоизменяемые объекты.
         private void Initialize()
         {
             ChangeSettings();
@@ -55,6 +56,7 @@ namespace Diamond_square
             FillColors(definingСolors);
         }
 
+        // Красит "PictureBox", на котором отображается картинка, в белый цвет.
         private void ClearPicture()
         {
             Graphics.FromImage(bmp).Clear(Color.White);
@@ -64,15 +66,18 @@ namespace Diamond_square
             start.Focus();
         }
 
+        // С равной вероятностью выдает либо число 1, либо число -1.
         private int Rand() => rnd.Next(-1, 1) == 0 ? 1 : -1;
 
         private async void Start_Click(object sender, EventArgs e)
         {
             progressBar.Visible = true;
 
+            // Отключает возможность менять настройки программы на время выполнения алгоритма.
             start.Enabled = save.Enabled = clear.Enabled = rBar.Enabled = trackBarP1.Enabled = trackBarP2.Enabled = 
                 trackBarP3.Enabled = trackBarP4.Enabled = additionalSettings.Enabled = pictureResolution.Enabled = false; 
 
+            // Инициализация и отрисовка угловых точек.
             arrOfHeights[0, 0] = trackBarP1.Value;
 
             arrOfHeights[imageSize, 0] = trackBarP2.Value;
@@ -89,6 +94,7 @@ namespace Diamond_square
             
             Draw(new Point(0, 0));
 
+            // Запуск в новом потоке, чтобы окно программы не зависало.
             Task task = Task.Run(() => DiamondSquare());
 
             await task;
@@ -98,6 +104,8 @@ namespace Diamond_square
             save.Focus();
         }
 
+        // Метод для изменения состояния полосы прогресса. Использует метод "Invoke",
+        // так как вызывается в отличном от потока, где расположен элемент управления "ProgressBar".
         private void ChangeProgressBarValueSafe(int value)
         {
             if (progressBar.InvokeRequired)
@@ -106,10 +114,13 @@ namespace Diamond_square
             else progressBar.Value = value;
         }
 
+        // Основной метод программы. Отвечает за исполнение алгоритма "Diamond-square".
         private void DiamondSquare()
         {
+            // Изначально шаг максимален, после будет уменьшаться, пока не станет равен 1.
             int step = imageSize;
 
+            // Счетчик отвечает за кол-во раз, которое отработал метод "Draw".
             int counter = 4;
 
             while (step != 1)
@@ -118,6 +129,7 @@ namespace Diamond_square
                 {
                     for (int j = 0; j < imageSize; j += step)
                     {
+                        // p1 - p4 - угловые точки для данного шага.
                         Point p1 = new Point(j, i);
 
                         Point p2 = new Point(step + j, i);
@@ -126,6 +138,7 @@ namespace Diamond_square
 
                         Point p4 = new Point(j, step + i);
 
+                        // Нахождение срединной точки для квадрата.
                         Point p = Diamond(p1, p2, p3, p4, step);
 
                         int h = arrOfHeights[p.X, p.Y];
@@ -140,6 +153,7 @@ namespace Diamond_square
 
                         Draw(p);
 
+                        // Нахождение срединных точек для ромбов.
                         Draw(Square(new Point(p1.X, p.Y), h1, h4, h, step));
 
                         Draw(Square(new Point(p2.X, p.Y), h2, h3, h, step));
@@ -162,8 +176,10 @@ namespace Diamond_square
             FillPicture();
         }
 
+        // Отображает на "PictureBox" все точки, отмеченные на "Bitmap".
         private async void FillPicture() => await Task.Run(() => picture.Image = bmp);
 
+        // Устанавливает на "Bitmap" точку, применяя к ней цвет, соответствующий ее высоте.
         private void Draw(Point p)
         {
             Color color = arrOfColors[arrOfHeights[p.X, p.Y] + -maxDepth];
@@ -185,25 +201,33 @@ namespace Diamond_square
             snowEndColor
         }
 
+        // Полностью заполняет массив цветов. Каждый цвет будет соответствовать определенной высоте точки.
+        // Весь цветовой диапазон был разбит на 5 частей, каждая из которых отвечает за свой биом.
         private void FillColors(Color[] colors)
-        {
+        { 
             int i = 0;
 
+            // Биом океана и других глубоких точек.
             FillBiome(ref i, -maxDepth + minOceanDepth, minOceanDepth - maxDepth,
                 colors[(int)Colors.oceanStartColor], colors[(int)Colors.oceanEndColor]);
 
+            // Биом моря и более мелких водоемов.
             FillBiome(ref i, -maxDepth, -minOceanDepth, colors[(int)Colors.seaStartColor], colors[(int)Colors.seaEndColor]);
 
+            // Биом равнин и небольших холмов.
             FillBiome(ref i, -maxDepth + minMountainHeight, minMountainHeight,
                 colors[(int)Colors.landStartColor], colors[(int)Colors.landEndColor]);
 
+            // Биом гористой местности и гор.
             FillBiome(ref i, -maxDepth + snowLineHeight, snowLineHeight - minMountainHeight,
                 colors[(int)Colors.mountainStartColor], colors[(int)Colors.mountainEndColor]);
 
+            // Биом гор, покрытых снежными шапками.
             FillBiome(ref i, -maxDepth + maxHeight + 1, maxHeight - snowLineHeight,
                 colors[(int)Colors.snowStartColor], colors[(int)Colors.snowEndColor]);
         }
 
+        // Равномерно заполняет весь биом на всем его диапазоне начиная с цвета "startColor", пошагово переходя к цвету "endColor".
         private void FillBiome(ref int i, int cycleEnd, int range, Color startColor, Color endColor)
         {
             double[] steps = DefineSteps(startColor, endColor, range);
@@ -215,6 +239,7 @@ namespace Diamond_square
             }
         }
 
+        // Рассчитывает шаг для плавного изменения цвета.
         private double[] DefineSteps(Color startColor, Color endColor, int range)
         {
             double[] steps = new double[3];
@@ -228,6 +253,8 @@ namespace Diamond_square
             return steps;
         }
 
+        // Шаг "diamond" алгоритма "Diamond-square".
+        // Нахождение срединной точки, присваивание ей значения, на основе среднего от угловых точек, плюс случайное число.
         private Point Diamond(Point p1, Point p2, Point p3, Point p4, int lenght)
         {
             Point p = new Point(p1.X + lenght / 2, p1.Y + lenght / 2);
@@ -240,6 +267,8 @@ namespace Diamond_square
             return p;
         }
 
+        // Шаг "square" алгоритма "Diamond-square".
+        // Нахождение срединной точки для одного из 4 ромбов.
         private Point Square(Point p, int h1, int h2, int h3, int lenght)
         {
             arrOfHeights[p.X, p.Y] = Convert.ToInt32((h1 + h2 + h3) / 3 + roughnessFactor * lenght * Rand());
@@ -249,6 +278,8 @@ namespace Diamond_square
             return p;
         }
 
+        // Проверяет, не выходят ли полученные значения за допустимый максимум.
+        // Если да, то меняет их на максимальные допустимые. 
         private void CheckExtremeValues(Point p)
         {
             int height = Math.Max(arrOfHeights[p.X, p.Y], maxDepth);
@@ -256,6 +287,7 @@ namespace Diamond_square
             arrOfHeights[p.X, p.Y] = Math.Min(height, maxHeight);
         }
 
+        // Позволяет сохранить, полученное в ходе работы приложения, изображение.
         private void Save_Click(object sender, EventArgs e)
         {
             var sfd = new SaveFileDialog
@@ -266,16 +298,19 @@ namespace Diamond_square
 
                 CheckPathExists = true,
 
+                // Форматы, в которых можно сохранить изображение.
                 Filter = "JPG (*.JPG)|*.JPG|BMP (*.BMP)|*.BMP|PNG (*.PNG)|*.PNG|GIF (*.GIF)|*.GIF"
             };
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+                // Попытка сохранить изображение.
                 try
                 {
                     picture.Image.Save(sfd.FileName);
                 }
 
+                // При ошибке показывает соответствующее окно и делает запись в лог файл.
                 catch (Exception ex)
                 {
                     string message = "Не удалось сохранить изображение. " + ex.Message;
@@ -288,6 +323,8 @@ namespace Diamond_square
             }
         }
 
+        // Возвращает контроль над элементами, заблокированными после нажатия на кнопку "Старт".
+        // Обнуляет данные, полученные в результате алгоритма "Diamond-square", дает возможность вновь его использовать.
         private void Clear_Click(object sender, EventArgs e)
         {
             start.Enabled = rBar.Enabled = trackBarP1.Enabled = trackBarP2.Enabled = trackBarP3.Enabled = 
@@ -302,6 +339,7 @@ namespace Diamond_square
             ClearPicture();
         }
 
+        // Изменяет значение переменной "roughnessFactor" и надписи "labelR".
         private void Rbar_Scroll(object sender, EventArgs e)
         {
             roughnessFactor = (float)(rBar.Value * 0.01);
@@ -314,6 +352,7 @@ namespace Diamond_square
             ChangeTexts();
         }
 
+        // Отвечает за изменение значений надписей "labelHeight".
         private void ChangeTexts()
         {
             labelHeight1.Text = trackBarP1.Value.ToString();
@@ -325,8 +364,10 @@ namespace Diamond_square
             labelHeight4.Text = trackBarP4.Value.ToString();
         }
 
+        // Закрывает форму "MainForm", тем самым выходит из программы.
         private void Exit_Click(object sender, EventArgs e) => Close();
 
+        // Открывает форму "SettingsForm", при ее закрытии получает данные.
         private void AdditionalSettings_Click(object sender, EventArgs e)
         {
             settingsForm.ShowDialog();
@@ -336,6 +377,7 @@ namespace Diamond_square
             Initialize();
         }
 
+        // Применяет полученные данные с формы "SettingsForm".
         private void ChangeSettings()
         {
             maxDepth = settingsForm.MaxDepth;
@@ -355,14 +397,18 @@ namespace Diamond_square
             ChangeTexts();
         }
 
+        // Изменяет разрешение изображения, которое будет получено в ходе работы программы.
         private void PictureResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Коэффициент отвечает за частоту повторений закрашивания одного и того же пикселя.
             const double REPET_COEFFICIENT = 1.67;
 
+            // Получает новое разрешение изображения.
             string[] splitComponents = pictureResolution.SelectedItem.ToString().Split();
 
             imageSize = int.Parse(splitComponents[0]) - 1;
 
+            // Применяет необходимые изменения.
             bmp = new Bitmap(imageSize + 1, imageSize + 1);
 
             arrOfHeights = new int[imageSize + 1, imageSize + 1];
@@ -370,17 +416,21 @@ namespace Diamond_square
             progressBar.Maximum = (int)((imageSize + 1) * (imageSize + 1) * REPET_COEFFICIENT);
         }
 
+        // Позволяет рассмотреть полученное изображение в ходе работы программмы в деталях.
         private void Picture_Click(object sender, EventArgs e)
         {
             string imagePath = "Image.jpg";
-
+            
             try
             {
+                // Попытка сохранить изображение.
                 picture.Image.Save(imagePath);
 
+                // Пытается открыть только что сохраненное изображение программой, установленной по умолчанию, для просмотра фотографий.
                 System.Diagnostics.Process.Start(imagePath);
             }
 
+            // При ошибке показывает соответствующее окно и делает запись в лог файл.
             catch (Exception ex)
             {
                 string message = "Не удалось открыть изображение. " + ex.Message;
@@ -392,6 +442,7 @@ namespace Diamond_square
             }
         }
 
+        // Открывают руководство пользователя на необходимой странице.
         private void Start_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             settingsForm.Helper("Start");
