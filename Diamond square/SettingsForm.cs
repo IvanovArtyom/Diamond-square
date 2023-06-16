@@ -11,7 +11,6 @@ namespace Diamond_square
         public SettingsForm()
         {
             InitializeComponent();
-
             FillArrOfColors();
         }
 
@@ -150,46 +149,30 @@ namespace Diamond_square
         // Устанавливает "заводские" настройки для программы.
         private void DefaultSettings_Click(object sender, EventArgs e)
         {
-            numUpDownMaxDepth.Value = -11034;
-
-            numUpDownMinOceanDepth.Value = -500;
-
+            numUpDownMaxDepth.Value = -3000;
+            numUpDownMinOceanDepth.Value = -1000;
             numUpDownMinMountainHeight.Value = 1000;
-
-            numUpDownSnowLineHeight.Value = 4675;
-
-            numUpDownMaxHeight.Value = 8848;
-
+            numUpDownSnowLineHeight.Value = 2900;
+            numUpDownMaxHeight.Value = 3000;
             oceanStartColor.BackColor = Color.FromArgb(0, 0, 0);
-
-            oceanEndColor.BackColor = Color.FromArgb(0, 49, 102);
-
-            seaStartColor.BackColor = Color.FromArgb(0, 49, 102);
-
-            seaEndColor.BackColor = Color.FromArgb(66, 170, 250);
-
-            landStartColor.BackColor = Color.FromArgb(107, 219, 107);
-
-            landEndColor.BackColor = Color.FromArgb(14, 59, 14);
-
-            mountainStartColor.BackColor = Color.FromArgb(255, 218, 158);
-
-            mountainEndColor.BackColor = Color.FromArgb(5, 3, 0);
-
-            snowStartColor.BackColor = Color.FromArgb(5, 3, 0);
-
+            oceanEndColor.BackColor = Color.FromArgb(45, 110, 175);
+            seaStartColor.BackColor = Color.FromArgb(45, 110, 175);
+            seaEndColor.BackColor = Color.FromArgb(100, 200, 255);
+            landStartColor.BackColor = Color.FromArgb(110, 220, 110);
+            landEndColor.BackColor = Color.FromArgb(20, 115, 20);
+            mountainStartColor.BackColor = Color.FromArgb(20, 115, 20);
+            mountainEndColor.BackColor = Color.FromArgb(30, 20, 0);
+            snowStartColor.BackColor = Color.FromArgb(30, 20, 0);
             snowEndColor.BackColor = Color.FromArgb(255, 250, 250);
-
             FillArrOfColors();
         }
 
         // Создает массив, содержащий все цвета палитры, для удобной передачи данных на форму "MainForm".
         private void FillArrOfColors()
         {
-            arrOfColors = new Color[] { oceanStartColor.BackColor, oceanEndColor.BackColor,
-                seaStartColor.BackColor, seaEndColor.BackColor, landStartColor.BackColor,
-                landEndColor.BackColor, mountainStartColor.BackColor, mountainEndColor.BackColor,
-                snowStartColor.BackColor, snowEndColor.BackColor };
+            arrOfColors = new Color[] { oceanStartColor.BackColor, oceanEndColor.BackColor, seaStartColor.BackColor,
+                seaEndColor.BackColor, landStartColor.BackColor, landEndColor.BackColor, mountainStartColor.BackColor,
+                mountainEndColor.BackColor, snowStartColor.BackColor, snowEndColor.BackColor };
         }
 
         // Всплывающие подсказки при наведении на цвета в палитре.
@@ -256,10 +239,7 @@ namespace Diamond_square
             catch (Exception ex)
             {
                 string message = "Не удалось открыть руководство пользователя. " + ex.Message;
-
-                MessageBox.Show(message, "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _ = new LogWriter(message);
             }
         }

@@ -12,7 +12,7 @@ namespace Diamond_square.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-11034")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-3000")]
         public int MaxDepth {
             get {
                 return ((int)(this["MaxDepth"]));
@@ -37,7 +37,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-500")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1000")]
         public int MinOceanDepth {
             get {
                 return ((int)(this["MinOceanDepth"]));
@@ -61,7 +61,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4675")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2900")]
         public int SnowLineHeight {
             get {
                 return ((int)(this["SnowLineHeight"]));
@@ -73,7 +73,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8848")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3000")]
         public int MaxHeight {
             get {
                 return ((int)(this["MaxHeight"]));
@@ -97,7 +97,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 49, 102")]
+        [global::System.Configuration.DefaultSettingValueAttribute("45, 110, 175")]
         public global::System.Drawing.Color OceanEndColor {
             get {
                 return ((global::System.Drawing.Color)(this["OceanEndColor"]));
@@ -109,7 +109,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 49, 102")]
+        [global::System.Configuration.DefaultSettingValueAttribute("45, 110, 175")]
         public global::System.Drawing.Color SeaStartColor {
             get {
                 return ((global::System.Drawing.Color)(this["SeaStartColor"]));
@@ -121,7 +121,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("66, 170, 250")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 200, 255")]
         public global::System.Drawing.Color SeaEndColor {
             get {
                 return ((global::System.Drawing.Color)(this["SeaEndColor"]));
@@ -133,7 +133,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("107, 219, 107")]
+        [global::System.Configuration.DefaultSettingValueAttribute("110, 220, 110")]
         public global::System.Drawing.Color LandStartColor {
             get {
                 return ((global::System.Drawing.Color)(this["LandStartColor"]));
@@ -145,7 +145,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("14, 59, 14")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20, 115, 20")]
         public global::System.Drawing.Color LandEndColor {
             get {
                 return ((global::System.Drawing.Color)(this["LandEndColor"]));
@@ -157,7 +157,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255, 218, 158")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20, 115, 20")]
         public global::System.Drawing.Color MountainStartColor {
             get {
                 return ((global::System.Drawing.Color)(this["MountainStartColor"]));
@@ -169,7 +169,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5, 3, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("30, 20, 0")]
         public global::System.Drawing.Color MountainEndColor {
             get {
                 return ((global::System.Drawing.Color)(this["MountainEndColor"]));
@@ -181,7 +181,7 @@ namespace Diamond_square.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5, 3, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("30, 20, 0")]
         public global::System.Drawing.Color SnowStartColor {
             get {
                 return ((global::System.Drawing.Color)(this["SnowStartColor"]));
